@@ -6,9 +6,11 @@ require 'pp'
 
 # Simple ruby to authenticate and grab some info., looking to drop auth vars into a . file shortly
 
-server = ""
-user = ""
-pass = ""
+rubrik_hash=JSON.parse(File.read(".rubrik/creds.json"))
+
+server = rubrik_hash['server']
+user = rubrik_hash['username']
+pass = rubrik_hash['password']
 
 def get_token(ip,u,p)
 	url = 'https://' + ip + "/"
