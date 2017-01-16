@@ -1,4 +1,22 @@
-# ruby-bits
+ruby-bits
+===============
+
 Generic ruby bits to be organized and used in chef/puppet environments
 
-rubrik.rb is the start of the framework to run underneath puppet/chef - Feel free to submit use cases.
+#Overview:
+* rubrik.rb is the start of the framework to run underneath puppet/chef
+
+#How to use:
+* .rubrik/creds.json must be in place in order to use any of the underlying code
+
+{
+    "server": "[FQDN/IP of appliance]",
+    "username": "[username]",
+    "password": "[password]"
+}
+
+#Use Cases:
+* Rubrik SLA Policies by Role
+* Submit new use cases please
+
+#Thanks to:
