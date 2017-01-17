@@ -18,7 +18,7 @@ else
   puts "Rubrik SLA Domain not set properly"
   if sla_hash.invert[desiredSla]
     puts "Rubrik SLA Domain Exists, setting #{machineName} to use it"
-    out = setSla(findVmItem(machineName,'id'),sla_hash.invert[desiredSla])
+    out = setSla(findVmItem(machineName,'managedId'),sla_hash.invert[desiredSla])
     pp out
   else
     puts "Rubrik SLA Domain does NOT exist, cannot comply"

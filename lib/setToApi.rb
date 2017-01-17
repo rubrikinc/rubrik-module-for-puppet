@@ -4,7 +4,6 @@ require 'uri'
 def setToApi(path,post)
     (token,server) = get_token
     puts path
-    puts post
     url = 'https://' + server + '/'
     uri = URI.parse(url)
     http = Net::HTTP.new(uri.host, uri.port)
