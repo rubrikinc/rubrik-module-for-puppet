@@ -29,7 +29,8 @@ Generic ruby bits to be organized and used in chef/puppet environments
   			 * Rubrik SLA Domain not set properly
   			 * Rubrik SLA Domain Exists, setting vm_name to use it
   			 * Rubrik SLA Domain Set to sla_name
-  	Usage : rubrikSetSla [vm_name] [sla_name]```
+  	Usage : rubrikSetSla [vm_name] [sla_name]
+```
 ---
 #Use Cases:
 * Rubrik SLA Policies by Role
