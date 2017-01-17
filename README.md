@@ -16,6 +16,7 @@ Generic ruby bits to be organized and used in chef/puppet environments
 ```
 * rubrikSetSla.rb 
 ```
+  **Usage : rubrikSetSla [vm_name] [sla_name]**
   Use this in order to confirm/change Rubrik SLA Domain for a vm_name.
 
   The script will confirm current subscription, if it exists, and act accordingly
@@ -28,7 +29,6 @@ Generic ruby bits to be organized and used in chef/puppet environments
   			 * Rubrik SLA Domain not set properly
   			 * Rubrik SLA Domain Exists, setting vm_name to use it
   			 * Rubrik SLA Domain Set to sla_name
-  	Usage : rubrikSetSla [vm_name] [sla_name]
 ```
 #Use Cases:
 * Rubrik SLA Policies by Role
