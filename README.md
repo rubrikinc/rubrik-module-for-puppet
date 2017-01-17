@@ -4,7 +4,7 @@ ruby-bits
 Generic ruby bits to be organized and used in chef/puppet environments
 
 #Overview:
-* rubrik.rb is the start of the framework to run underneath puppet/chef
+* Rubrik Framework for issuing commands in Ruby 
 #How to use:
 * ~/.rubrik/creds.json must be in place in order to use any of the underlying code
 ```json
