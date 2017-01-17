@@ -14,7 +14,8 @@ Generic ruby bits to be organized and used in chef/puppet environments
     "password": "[password]"
 }
 ```
-* rubrikSetSla.rb **Usage : rubrikSetSla [vm_name] [sla_name]**
+* rubrikSetSla.rb 
+**Usage : rubrikSetSla [vm_name] [sla_name]**
 ```
   Use this in order to confirm/change Rubrik SLA Domain for a vm_name.
 
