@@ -35,4 +35,5 @@ Generic ruby bits to be organized and used in chef/puppet environments
 #Use Cases:
 * Rubrik SLA Policies by Role
 * Submit new use cases please
+
 #Thanks to:
