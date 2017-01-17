@@ -1,20 +1,18 @@
 require 'net/https'
 require 'uri'
 
-def setToApi(path,post)
+def setToApi(p,l)
     (token,server) = get_token
-    puts path
     url = 'https://' + server + '/'
     uri = URI.parse(url)
-    http = Net::HTTP.new(uri.host, uri.port)
-    http.use_ssl = true
-    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-    request = Net::HTTP::Post.new(path)
-    request.add_field('Content-Type', 'application/json')
-    request.basic_auth(token, '')
-    request.body = post.to_json
-    response = http.request(request)
-    puts post.to_json
-    output = response.body
-    return output
+    h = Net::HTTP.new(uri.host, uri.port)
+    h.use_ssl = true
+    h.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    r = Net::HTTP::Post.new(p)
+    r.add_field('Content-Type', 'application/json')
+    r.basic_auth(token, '')
+    r.body = l.to_json
+    i = h.request(r)
+    o = i.body
+    return o
 end

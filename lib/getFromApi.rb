@@ -2,15 +2,15 @@ require './lib/getToken.rb'
 
 
 # Produce hash of VM Details based on search
-def getFromApi(path)
-    (token,server) = get_token
-    url = 'https://' + server
+def getFromApi(p)
+    (t,s) = get_token
+    url = 'https://' + s
     uri = URI.parse(url)
-    http = Net::HTTP.new(uri.host, uri.port)
-    http.use_ssl = true
-    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-    request = Net::HTTP::Get.new(path)
-    request.basic_auth(token, '')
-    response = http.request(request)
-    return JSON.parse(response.body)
+    h = Net::HTTP.new(uri.host, uri.port)
+    h.use_ssl = true
+    h.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    r = Net::HTTP::Get.new(p)
+    r.basic_auth(t, '')
+    i = h.request(r)
+    return JSON.parse(i.body)
 end

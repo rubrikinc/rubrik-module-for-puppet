@@ -9,5 +9,5 @@ require 'json'
 #}
 
 def getCreds
-	return rubrik_hash = JSON.parse(File.read('/Users/petermilanese/.rubrik/creds.json'))
+	return JSON.parse(File.read('/Users/petermilanese/.rubrik/creds.json'))
 end

@@ -6,19 +6,19 @@ require 'net/https'
 require 'uri'
 
 def get_token()
-  rubrik_hash = getCreds
-  server = rubrik_hash['server']
-  user = rubrik_hash['username']
-  pass = rubrik_hash['password']
-    url = 'https://' + server + '/'
+  rh = getCreds
+  s = rh['server']
+  u = rh['username']
+  p = rh['password']
+    url = 'https://' + s + '/'
     uri = URI.parse(url)
-    http = Net::HTTP.new(uri.host, uri.port)
-    http.use_ssl = true
-    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-    request = Net::HTTP::Post.new('/api/v1/login')
-    request.add_field('Content-Type', 'application/json')
-    request.body = { 'username' => user, 'password' => pass }.to_json
-    response = http.request(request)
-    output = JSON.parse(response.body)
-    return output['token'],server
+    h = Net::HTTP.new(uri.host, uri.port)
+    h.use_ssl = true
+    h.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    r = Net::HTTP::Post.new('/api/v1/login')
+    r.add_field('Content-Type', 'application/json')
+    r.body = { 'username' => u, 'password' => p }.to_json
+    i = h.request(r)
+    o = JSON.parse(i.body)
+    return o['token'],s
 end
