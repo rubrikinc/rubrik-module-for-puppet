@@ -5,6 +5,7 @@ Generic ruby bits to be organized and used in chef/puppet environments
 
 #Overview:
 * Rubrik Framework for issuing commands in Ruby 
+
 #How to use:
 * ~/.rubrik/creds.json must be in place in order to use any of the underlying code
 ```json
@@ -30,6 +31,7 @@ Generic ruby bits to be organized and used in chef/puppet environments
   			 * Rubrik SLA Domain Exists, setting vm_name to use it
   			 * Rubrik SLA Domain Set to sla_name
 ```
+
 #Use Cases:
 * Rubrik SLA Policies by Role
 * Submit new use cases please
