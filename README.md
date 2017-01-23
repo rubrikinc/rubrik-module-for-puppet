@@ -16,7 +16,7 @@ Generic ruby bits to be organized and used in chef/puppet environments
 }
 ```
 * rubrikSetSla.rb 
-**Usage : rubrikSetSla [vm_name] [sla_name]**
+**Usage : rubrikFileSearch.rb [vm_name] [sla_name]**
 ```
   Use this in order to confirm/change Rubrik SLA Domain for a vm_name.
 
@@ -30,6 +30,11 @@ Generic ruby bits to be organized and used in chef/puppet environments
   			 * Rubrik SLA Domain not set properly
   			 * Rubrik SLA Domain Exists, setting vm_name to use it
   			 * Rubrik SLA Domain Set to sla_name
+```
+* rubrikFileSearch.rb
+**Usage : rubrikFileSearch.rb [vm_name] [file_name]**
+``` 
+   Use this to perform adhoc file searches on a vm. 
 ```
 
 #Use Cases:
