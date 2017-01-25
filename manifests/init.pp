@@ -42,6 +42,15 @@
 #
 # Copyright 2017 Your name here, unless otherwise noted.
 #
-class rubrik{
-  notify{'rubrik module':}
+class rubrik (
+
+  String                  $sla_domain_class         = '::rubrik::sla_domain',
+
+  ) {
+
+
+  if ($sla_domain_class) {
+    contain $sla_domain_class
+  }
+
 }
