@@ -42,7 +42,7 @@
 #
 # Copyright 2017 Your name here, unless otherwise noted.
 #
-class rubrik {
-
+class rubrik (){
+  notify{'rubrik module':}
 
 }
