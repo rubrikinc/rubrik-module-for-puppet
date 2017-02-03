@@ -4,5 +4,6 @@ Facter.add(:sladomain) do
   puts "Here's where we do the sla_domain lookup"
   setcode do
     #Facter::Core::Execution.exec(‘/bin/echo HELP’)
+    'TEST'
   end
 end
