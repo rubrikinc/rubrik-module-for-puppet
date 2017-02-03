@@ -6,3 +6,4 @@ Facter.add(:sladomain) do
     answer = "here"
   end
 end
+puts answer
