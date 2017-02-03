@@ -1,11 +1,10 @@
-
 require './lib/getVm.rb'
 require './lib/getSlaHash.rb'
 require './lib/setSla.rb'
 
 # usage setSla.rb [vmname] [desiredSlaName]
 
-(machineName,desiredSla)=ARGV
+(machineName, desiredSla)=ARGV
 if machineName.nil? || desiredSla.nil?
   Kernel.abort("\n ----------------------------------------------------\n
   Use this in order to confirm/change Rubrik SLA Domain for a vm_name. \n
@@ -25,13 +24,13 @@ end
 
 sla_hash = getSlaHash()
 
-if desiredSla == sla_hash[findVmItem(machineName,'effectiveSlaDomainId')]
+if desiredSla == sla_hash[findVmItem(machineName, 'effectiveSlaDomainId')]
   puts "Rubrik SLA Domain already set properly"
 else
   puts "Rubrik SLA Domain not set properly"
   if sla_hash.invert[desiredSla]
     puts "Rubrik SLA Domain Exists, setting #{machineName} to use it"
-    out = setSla(findVmItem(machineName,'managedId'),sla_hash.invert[desiredSla])
+    out = setSla(findVmItem(machineName, 'managedId'), sla_hash.invert[desiredSla])
     if !out.nil?
       puts out
     else
