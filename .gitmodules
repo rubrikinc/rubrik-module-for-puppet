@@ -1,0 +1,6 @@
+[submodule "ruby-bits"]
+	path = lib/facter/ruby-bits
+	url = ssh://git@github.com/pmilano1/ruby-bits.git
+[submodule "lib/facter/ruby-bits"]
+	path = lib/facter/ruby-bits
+	url = ssh://git@github.com/pmilano1/ruby-bits.git
