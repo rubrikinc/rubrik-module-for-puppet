@@ -6,3 +6,6 @@ Facter.add(:sladomain) do
     Facter::Core::Execution.exec('ruby ruby-bits/rubrikGetSla.rb $::hostname')
   end
 end
+Facter.add(:rubypath) do
+setcode 'which ruby'
+end
