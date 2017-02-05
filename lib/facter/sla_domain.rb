@@ -4,5 +4,6 @@ Facter.add(:sladomain) do
   setcode do
     # Here we want to call the underlying ruby to find the current sla_domain.
     Facter::Core::Execution.exec('/opt/puppetlabs/puppet/bin/ruby ruby-bits/rubrikGetSla.rb se-pmilanes-pc01')
+  function_notice(["result = #{result}"])
   end
 end
