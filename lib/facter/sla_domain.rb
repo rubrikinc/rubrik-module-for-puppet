@@ -4,7 +4,7 @@ Facter.add(:sladomain) do
   setcode do
   # begin
 #   Facter::Util::Resolution.exec(
-  File.join(File.dirname(__FILE__), 'ruby-bits/rubrikGetSla.rb'))
+  File.join(File.dirname(__FILE__), 'ruby-bits/rubrikGetSla.rb')
   #  'did not timeout!'
   # rescue Facter::Core::Execution::ExecutionFailure
   #  'timeout!'
