@@ -9,5 +9,6 @@ require 'json'
 #}
 
 def getCreds
-	return JSON.parse(File.read('/Users/petermilanese/.rubrik/creds.json'))
+	File.expand_path('~')
+	return JSON.parse(File.read(File.expand_path('~') + '/.rubrik/creds.json'))
 end
