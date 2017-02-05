@@ -2,7 +2,6 @@ require 'facter'
 Facter.add(:sladomain) do
 #  confine :kernel => [ 'Linux' , 'SunOS' , 'FreeBSD' , 'Darwin' ] - for when we get windwos in the loop.
   setcode do
-'oddutput'
   # begin
     Facter::Core::Execution.exec('/opt/puppetlabs/puppet/bin/ruby ruby-bits/rubrikGetSla.rb se-pmilanes-pc01')
   #  'did not timeout!'
