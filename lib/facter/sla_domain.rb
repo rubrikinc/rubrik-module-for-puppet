@@ -6,7 +6,8 @@ Facter.add(:sladomain) do
   #
   ruby = '/opt/puppetlabs/puppet/bin/ruby'
   cmd = File.join(File.dirname(__FILE__), 'ruby-bits/rubrikGetSla.rb')
-  Facter::Util::Resolution.exec("${ruby} S{cmd} se-pmilanes-pc01")
+   "${ruby} S{cmd} se-pmilanes-pc01"
+  #Facter::Util::Resolution.exec("${ruby} S{cmd} se-pmilanes-pc01")
   #  'did not timeout!'
   # rescue Facter::Core::Execution::ExecutionFailure
   #  'timeout!'
