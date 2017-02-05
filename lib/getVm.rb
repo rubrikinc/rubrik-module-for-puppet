@@ -1,4 +1,5 @@
-require './lib/getFromApi.rb'
+#$LOAD_PATH.unshift File.expand_path('./', __FILE__)
+require 'getFromApi.rb'
 
 # Grab Requested [item] from hash and return ony that value
 def findVmItem(t, item)

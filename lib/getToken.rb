@@ -1,7 +1,7 @@
 # Establish Token for subsequent requests during this run
 # No arguments needed
 
-require './lib/getCreds.rb'
+require 'getCreds.rb'
 require 'net/https'
 require 'uri'
 

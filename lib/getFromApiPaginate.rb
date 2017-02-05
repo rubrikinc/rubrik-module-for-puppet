@@ -1,4 +1,4 @@
-require './lib/getFromApi.rb'
+require 'getFromApi.rb'
 
 # outputs all of the dump, still needs work.
 
