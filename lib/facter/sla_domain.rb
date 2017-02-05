@@ -4,7 +4,7 @@ Facter.add(:sladomain) do
   setcode do
   # begin
    pth = File.join(File.dirname(__FILE__), 'ruby-bits/rubrikGetSla.rb')
-   Facter::Util::Resolution.exec(pth)
+   Facter::Util::Resolution.exec(${pth})
   #Facter::Util::Resolution.exec('opt/puppetlabs/puppet/binruby ' + File.join(File.dirname(__FILE__), './ruby-bits/rubrikGetSla.rb') + ' se-pmilanes-pc01')
   #  'did not timeout!'
   # rescue Facter::Core::Execution::ExecutionFailure
