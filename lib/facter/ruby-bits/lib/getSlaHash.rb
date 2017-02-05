@@ -1,4 +1,4 @@
-require './lib/getFromApi.rb'
+require 'getFromApi.rb'
 # Grab Requested [item] from hash and return ony that value
 def getSlaHash()
 	hash = Hash[getFromApi('/api/v1/sla_domain')]

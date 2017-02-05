@@ -1,4 +1,5 @@
-require './lib/getToken.rb'
+$LOAD_PATH.unshift File.expand_path('./', __FILE__)
+require 'getToken.rb'
 
 
 # Produce hash of VM Details based on search

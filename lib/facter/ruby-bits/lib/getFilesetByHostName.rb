@@ -1,4 +1,4 @@
-require './lib/getVm.rb'
+require 'getVm.rb'
 require 'pp'
 
 def getFilesetByHostName (machineName)
