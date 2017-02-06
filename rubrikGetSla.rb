@@ -6,7 +6,6 @@ require 'getSlaHash.rb'
 require 'setSla.rb'
 # usage setSla.rb [vmname] [desiredSlaName]
 
-puts __dir__
 machineName=ARGV[0]
 if machineName.nil?
   Kernel.abort("Need Hostname")
