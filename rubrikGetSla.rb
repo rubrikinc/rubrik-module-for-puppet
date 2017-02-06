@@ -1,7 +1,6 @@
 # Set Lib Path Addition
 
 $LOAD_PATH.unshift File.expand_path('../lib/', __FILE__)
-puts $LOAD_PATH
 require 'getVm.rb'
 require 'getSlaHash.rb'
 require 'setSla.rb'
