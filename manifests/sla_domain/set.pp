@@ -11,12 +11,11 @@ class rubrik::sla_domain::set(
     $ruby = '/opt/puppetlabs/puppet/bin/ruby'
     $cmd =  "${ruby} ${script} ${::hostname} ${rubriksla}"
     notify{"Running ${cmd}":}
-    exec { 'update-sla':
-      command => "${ruby} ${script} ${::hostname} ${rubriksla}",
-    }
+#    exec { 'update-sla':
+#      command => "${ruby} ${script} ${::hostname} ${rubriksla}",
+#    }
   }
   else{
     notify{'Rubrik SLA Domain Already set properly': }
-    set_sla{$rubriksla:}
   }
 }
