@@ -26,11 +26,8 @@ end
 sla_hash = getSlaHash()
 
 if desiredSla == sla_hash[findVmItem(machineName, 'effectiveSlaDomainId')]
-  puts "Rubrik SLA Domain already set properly"
 else
-  puts "Rubrik SLA Domain not set properly"
   if sla_hash.invert[desiredSla]
-    puts "Rubrik SLA Domain Exists, setting #{machineName} to use it"
     out = setSla(findVmItem(machineName, 'managedId'), sla_hash.invert[desiredSla])
     if !out.nil?
       puts out
