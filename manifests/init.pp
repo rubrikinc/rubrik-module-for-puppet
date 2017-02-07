@@ -1,4 +1,4 @@
-# Class: rubrik
+# Class: rubrik - not used
 # ===========================
 #
 # Full description of class rubrik here.
@@ -42,15 +42,15 @@
 #
 # Copyright 2017 Your name here, unless otherwise noted.
 #
-class rubrik (
+#class rubrik (
 
-  String                  $sla_domain_class         = '::rubrik::sla_domain',
+#  String                  $sla_domain_class         = '::rubrik::sla_domain',
 
-  ) {
+#  ) {
 
 
-  if ($sla_domain_class) {
-    contain $sla_domain_class
-  }
+#  if ($sla_domain_class) {
+#    contain $sla_domain_class
+#  }
 
-}
+#}
