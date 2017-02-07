@@ -9,5 +9,5 @@ require 'json'
 #}
 
 def getCreds
-	return JSON.parse(File.read(File.join(ENV['HOME'], '/.rubrik/creds.json')))
+	return JSON.parse(File.read(ENV['HOME']+'/.rubrik/creds.json'))
 end
