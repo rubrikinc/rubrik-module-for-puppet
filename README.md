@@ -55,11 +55,11 @@ se.
 
 ## Limitations
 
-Rubrik v3.1
+* Rubrik v3.1
 
-Centos7
+* Centos7
 
-Puppet 2016/05
+* Puppet 2016/05
 
 ## Development
 
