@@ -1,9 +1,10 @@
 class rubrik::sla_domain::set(
-  $slahash = {}
+  $rubriksla,
+  $rubriknode,
+  $rubrikpass,
+  $rubrikuser,
   )
 {
-  validate_hash ( $slahash )
-  $configs = hiera_hash('rubrik::configs', $slahash)
   if ::sladomain != $rubriksla{
     notify{"${::rubrik::configs::rubriksla} Rubrik SLA Domain out of compliance, reapplying ${rubrikuser} ${rubriksla}": }
     $script = '/opt/puppetlabs/puppet/cache/lib/facter/ruby-bits/rubrikSetSla.rb'
