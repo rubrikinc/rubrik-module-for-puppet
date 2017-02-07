@@ -6,7 +6,7 @@ class rubrik::sla_domain::set( $sla_domain = 'Undefined')
       $script = '/opt/puppetlabs/puppet/cache/lib/facter/rub-bits/rubrikSetSla.rb'
       $ruby = '/opt/puppetlabs/puppet/bin/ruby'
       exec { 'update-sla':
-        command => "${ruby} ${script} ::hostname ${sla_domain}",
+        command => "${ruby} ${script} ${::hostname} ${sla_domain}",
         }
       }
   }
