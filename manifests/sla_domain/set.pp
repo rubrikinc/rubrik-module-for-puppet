@@ -16,6 +16,6 @@ class rubrik::sla_domain::set(
 #    }
   }
   else{
-    notify{'Rubrik SLA Domain Already set properly': }
+    notify{"Rubrik SLA Domain Already set properly .${::sladomain}., .${rubriksla}.": }
   }
 }
