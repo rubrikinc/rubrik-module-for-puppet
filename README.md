@@ -34,13 +34,13 @@ Tested on Rubrik v3.1
 
 ## Usage
 
-# Define classes to load in base - Depends on hiera_include('classes')
+### Define classes to load in base - Depends on hiera_include('classes')
 
 ```ruby
 classes:
     - rubrik::sla_domain::set
 ```
-# Hiera - Let's set a base sladomain
+### Hiera - Let's set a base sladomain
 
 ```ruby
 rubrik::sla_domain::set::sla_domain: 'Silver'
