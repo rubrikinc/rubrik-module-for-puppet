@@ -5,6 +5,8 @@ class rubrik::sla_domain::set( $sla_domain = 'Undefined')
     if ::osfamily == 'linux' {
       $script = '/opt/puppetlabs/puppet/cache/lib/facter/rub-bits/rubrikSetSla.rb'
       $ruby = '/opt/puppetlabs/puppet/bin/ruby'
+      $cmd =  "${ruby} ${script} ${::hostname} ${sla_domain}"
+      notify{"Running ${cmd}":}
       exec { 'update-sla':
         command => "${ruby} ${script} ${::hostname} ${sla_domain}",
         }
