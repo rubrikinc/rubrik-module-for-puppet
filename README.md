@@ -19,18 +19,13 @@ configuration as it pertains to puppet agents.
 
 ## Setup
 
+```ruby
 mod 'rubrik',
   :git  =>  'https://github.com/pmilano1/rubrik'
-
-### What rubrik affects **OPTIONAL**
+```
+### What rubrik affects
 
 This module currently enforces SLA Domain membership
-
-### Setup Requirements **OPTIONAL**
-
-Tested on Rubrik v3.1
-
-### Beginning with rubrik
 
 ## Usage
 
