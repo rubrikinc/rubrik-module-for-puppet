@@ -5,7 +5,7 @@ class rubrik::sla_domain::set(
   $rubrikuser,
   )
 {
-  if ::sla_domain != $rubriksla{
+  if ::sladomain != $rubriksla{
     notify{"${::rubrik::configs::rubriksla} Rubrik SLA Domain out of compliance ${::sla_domain}, reapplying ${rubriksla}": }
     $script = '/opt/puppetlabs/puppet/cache/lib/facter/ruby-bits/rubrikSetSla.rb'
     $ruby = '/opt/puppetlabs/puppet/bin/ruby'
