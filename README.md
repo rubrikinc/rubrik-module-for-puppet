@@ -59,4 +59,4 @@ se.
 ## Development
 
 
-## Release Notes/Contributors/Etc. **Optional**
+## Release Notes/Contributors/Etc.
