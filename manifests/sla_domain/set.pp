@@ -5,6 +5,6 @@ class rubrik::sla_domain::set( $sla_domain = 'Undefined')
   }
   else{
     notify{'Rubrik SLA Domain Already set properly': }
-    set_sla{$sla_domain}
+    set_sla{$sla_domain:}
   }
 }
