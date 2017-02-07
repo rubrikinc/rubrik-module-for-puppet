@@ -16,7 +16,7 @@ The Rubrik Puppet Module supplies an interface into the Rubrik (Brik)
 configuration as it pertains to puppet agents.
 
 ## Setup
-
+Add the module to your Puppetfile
 ```ruby
 mod 'rubrik',
   :git  =>  'https://github.com/pmilano1/rubrik'
