@@ -1,4 +1,4 @@
-class rubrik::sla_domain::set( $myvar = $::sla_domain)
+class rubrik::sla_domain::set( $sla_domain = 'Undefined')
 {
-  notify{"In Rubrik Set Routine for ${::hostname}, I have ${::sla_domain} but it should be ${::sladomain}":}
+  notify{"In Rubrik Set Routine for ${::hostname}, I have %{::sladomain} but it should be ${sla_domain}":}
 }
