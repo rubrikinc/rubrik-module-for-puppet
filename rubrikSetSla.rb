@@ -1,6 +1,7 @@
-require './lib/getVm.rb'
-require './lib/getSlaHash.rb'
-require './lib/setSla.rb'
+$LOAD_PATH.unshift File.expand_path('../lib/', __FILE__)
+require 'getVm.rb'
+require 'getSlaHash.rb'
+require 'setSla.rb'
 
 # usage setSla.rb [vmname] [desiredSlaName]
 
