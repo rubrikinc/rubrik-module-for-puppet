@@ -2,7 +2,7 @@ class rubrik::sla_domain::set( $sla_domain = 'Undefined')
 {
   if ::sladomain != $sla_domain{
     notify{"Rubrik SLA Domain out of compliance, reapplying ${sla_domain}": }
-    if ::osfamily == 'linux' {
+    if ::osfamily == 'RedHat' {
       $script = '/opt/puppetlabs/puppet/cache/lib/facter/rub-bits/rubrikSetSla.rb'
       $ruby = '/opt/puppetlabs/puppet/bin/ruby'
       $cmd =  "${ruby} ${script} ${::hostname} ${sla_domain}"
