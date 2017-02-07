@@ -1,19 +1,21 @@
-class rubrik::sla_domain::set( $sla_domain = 'Undefined')
+class rubrik::sla_domain::set(
+  $slahash = {}
+  )
 {
-  if ::sladomain != $sla_domain{
-    notify{"Rubrik SLA Domain out of compliance, reapplying ${sla_domain}": }
-  #  if ::osfamily == 'RedHat' {
-      $script = '/opt/puppetlabs/puppet/cache/lib/facter/ruby-bits/rubrikSetSla.rb'
-      $ruby = '/opt/puppetlabs/puppet/bin/ruby'
-      $cmd =  "${ruby} ${script} ${::hostname} ${sla_domain}"
-      notify{"Running ${cmd}":}
-      exec { 'update-sla':
-        command => "${ruby} ${script} ${::hostname} ${sla_domain}",
-        }
-  #    }
+  validate_hash ( $slahash )
+  $configs = hiera_hash('rubrik::configs', $slahash)
+  if ::sladomain != $rubriksla{
+    notify{"${::rubrik::configs::rubriksla} Rubrik SLA Domain out of compliance, reapplying ${rubrikuser} ${rubriksla}": }
+    $script = '/opt/puppetlabs/puppet/cache/lib/facter/ruby-bits/rubrikSetSla.rb'
+    $ruby = '/opt/puppetlabs/puppet/bin/ruby'
+    $cmd =  "${ruby} ${script} ${::hostname} ${rubriksla}"
+    notify{"Running ${cmd}":}
+    exec { 'update-sla':
+      command => "${ruby} ${script} ${::hostname} ${rubriksla}",
+    }
   }
   else{
     notify{'Rubrik SLA Domain Already set properly': }
-    set_sla{$sla_domain:}
+    set_sla{$rubriksla:}
   }
 }
