@@ -10,5 +10,5 @@ require 'json'
 
 def getCreds
 	File.expand_path('~')
-	return JSON.parse(File.read(File.expand_path(ENV['HOME']) + '/.rubrik/creds.json'))
+	return JSON.parse(File.read(File.join(ENV['HOME'], '/.rubrik/creds.json'))
 end
