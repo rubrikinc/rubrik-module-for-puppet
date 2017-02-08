@@ -5,9 +5,6 @@ require 'parseoptions.rb'
 
 # Global options
 @options = OptparseExample.parse(ARGV)
-if @options.vm.nil?
-  Kernel.abort("Need Hostname")
-end
 
 # Grab the SLAHash to make pretty names
 
@@ -21,6 +18,7 @@ if @options.sla then
   puts effectiveSla
   end
   if @options.set then
+    puts @options.sladomain
     require 'setSla.rb'
     if @options.sladomain == sla_hash[findVmItem(@options.vm, 'effectiveSlaDomainId')]
     else
