@@ -16,6 +16,6 @@ class rubrik::sla_domain::set inherits rubrik(
 #    }
   }
   else{
-    notify{'Rubrik SLA Domain Already set properly ${rubrik::rubrikuser}': }
+    notify{"Rubrik SLA Domain Already set properly ${rubrik::rubrikuser}": }
   }
 }
