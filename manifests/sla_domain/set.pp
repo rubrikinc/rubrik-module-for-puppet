@@ -1,8 +1,5 @@
 class rubrik::sla_domain::set (
   $rubriksla,
-  $rubriknode,
-  $rubrikpass,
-  $rubrikuser,
   ) inherits rubrik
 {
   if $::sladomain != $rubriksla{
