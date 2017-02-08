@@ -6,8 +6,8 @@ require 'net/https'
 require 'uri'
 
 def get_token()
-  if @options.s? then
-    sv=@options.s
+  if @options.n? then
+    sv=@options.n
     un=@options.u
     pw=@options.p
   else
