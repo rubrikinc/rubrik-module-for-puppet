@@ -11,8 +11,6 @@ end
 
 # Grab the SLAHash to make pretty names
 
-
-
 if @options.sla then
   require 'getSlaHash.rb'
   require 'getVm.rb'
@@ -30,8 +28,6 @@ if @options.sla then
         out = setSla(findVmItem(@options.vm, 'managedId'), sla_hash.invert[@options.sladomain])
         if !out.nil?
           puts out
-        else
-          puts "Rubrik SLA Domain Set to #{@options.sladomain}"
         end
       else
         puts "Rubrik SLA Domain does NOT exist, cannot comply"
