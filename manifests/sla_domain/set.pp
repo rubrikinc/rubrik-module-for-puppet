@@ -9,7 +9,7 @@ class rubrik::sla_domain::set (
     $cmd =  "${ruby} ${script} -c ${::hostname} -n ${rubrik::rubriknode} -u ${rubrik::rubrikuser} -p ${rubrik::rubrikpass} --sla --set --sladomain ${rubriksla}"
     notify{"Running ${cmd}":}
     exec { 'update-sla':
-      command => cmd,
+      command => $cmd,
     }
   }
   else{
