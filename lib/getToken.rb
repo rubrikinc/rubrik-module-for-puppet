@@ -6,10 +6,10 @@ require 'net/https'
 require 'uri'
 
 def get_token()
-  if !@s.nil? then
-    sv=@s
-    un=@u
-    pw=@p
+  if @options.s? then
+    sv=@options.s
+    un=@options.u
+    pw=@options.p
   else
     require 'getCreds.rb'
     rh = getCreds
@@ -17,7 +17,6 @@ def get_token()
     un = rh['username']
     pw = rh['password']
   end
-  puts sv
   url = 'https://' + sv + '/'
   uri = URI.parse(url)
   h = Net::HTTP.new(uri.host, uri.port)
@@ -26,10 +25,7 @@ def get_token()
   r = Net::HTTP::Post.new('/api/v1/login')
   r.add_field('Content-Type', 'application/json')
   r.body = { 'username' => un, 'password' => pw }.to_json
-  puts "posting request for token"
-  puts r
   i = h.request(r)
   o = JSON.parse(i.body)
-  puts o
   return o['token'],sv
 end

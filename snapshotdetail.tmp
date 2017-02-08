@@ -1,0 +1,95 @@
+{
+  "date": "2017-01-15T23:33:54Z",
+  "indexState": 1,
+  "virtualMachine": {
+    "id": "f6a2122c-584b-4048-9cfb-030ab3cfdc34-vm-35883",
+    "managedId": "VirtualMachine:::f6a2122c-584b-4048-9cfb-030ab3cfdc34-vm-35883",
+    "moid": "vm-35883",
+    "name": "SE-PMILANES-WIN",
+    "vCenterId": "f6a2122c-584b-4048-9cfb-030ab3cfdc34",
+    "hostId": "f6a2122c-584b-4048-9cfb-030ab3cfdc34-host-33380",
+    "powerStatus": "poweredOn",
+    "configuredSlaDomainId": "28d92f5f-aafb-4991-8b84-c9c376151c25",
+    "configuredSlaDomainName": "Silver",
+    "effectiveSlaDomainId": "28d92f5f-aafb-4991-8b84-c9c376151c25",
+    "effectiveSlaDomainName": "Silver",
+    "effectiveSlaSourceManagedId": "VirtualMachine:::f6a2122c-584b-4048-9cfb-030ab3cfdc34-vm-35883",
+    "protectionDate": "2017-02-03T21:56:33Z",
+    "ipAddress": "172.17.60.97",
+    "toolsInstalled": true,
+    "snapshotCount": 28,
+    "primaryClusterUuid": "5fca952e-d332-4419-bb96-8339d9beb3ac",
+    "isReplicationEnabled": true,
+    "isArchived": false,
+    "folderPath": [
+      {
+        "managedId": "vCenter:::f6a2122c-584b-4048-9cfb-030ab3cfdc34",
+        "name": "demovcsa.rubrik.demo"
+      },
+      {
+        "managedId": "DataCenter:::f6a2122c-584b-4048-9cfb-030ab3cfdc34-datacenter-21",
+        "name": "Santa Clara"
+      },
+      {
+        "managedId": "Folder:::f6a2122c-584b-4048-9cfb-030ab3cfdc34-group-v22",
+        "name": "vm"
+      },
+      {
+        "managedId": "Folder:::f6a2122c-584b-4048-9cfb-030ab3cfdc34-group-v77",
+        "name": "Demo"
+      },
+      {
+        "managedId": "Folder:::f6a2122c-584b-4048-9cfb-030ab3cfdc34-group-v78",
+        "name": "SE Servers"
+      },
+      {
+        "managedId": "Folder:::f6a2122c-584b-4048-9cfb-030ab3cfdc34-group-v55027",
+        "name": "NORAM"
+      },
+      {
+        "managedId": "Folder:::f6a2122c-584b-4048-9cfb-030ab3cfdc34-group-v47096",
+        "name": "SE-PMILANES"
+      }
+    ],
+    "inheritedSlaName": "Silver",
+    "infraPath": [
+      {
+        "managedId": "vCenter:::f6a2122c-584b-4048-9cfb-030ab3cfdc34",
+        "name": "demovcsa.rubrik.demo"
+      },
+      {
+        "managedId": "DataCenter:::f6a2122c-584b-4048-9cfb-030ab3cfdc34-datacenter-21",
+        "name": "Santa Clara"
+      },
+      {
+        "managedId": "ComputeCluster:::f6a2122c-584b-4048-9cfb-030ab3cfdc34-domain-c26",
+        "name": "Demo"
+      },
+      {
+        "managedId": "VmwareHost:::f6a2122c-584b-4048-9cfb-030ab3cfdc34-host-33380",
+        "name": "esx10.rubrik.demo"
+      }
+    ],
+    "slaId": "28d92f5f-aafb-4991-8b84-c9c376151c25",
+    "vmwareToolsInstalled": true,
+    "isRelic": false,
+    "snapshotConsistencyMandate": "UNKNOWN",
+    "guestCredentialAuthorization": "SUCCESSFUL"
+  },
+  "isCorrupt": false,
+  "replicationLocationIds": [
+    "a9134de9-437e-4844-a65f-cc2fcbadf4bf"
+  ],
+  "archivalLocationIds": [
+    "5bd62b71-2969-4303-b27b-a6d6599a6f2b"
+  ],
+  "snapshotDiskIds": [
+    "cf2d0567-353f-45e0-8324-82792c8fca5a"
+  ],
+  "isOnDemandSnapshot": false,
+  "cloudState": 2,
+  "snapshotVmName": "SE-PMILANES-WIN",
+  "id": "23b0fd1e-8920-475f-bf37-4c54eb5617af",
+  "consistencyLevel": "1",
+  "config": "[\"com.vmware.vim25.VirtualMachineConfigSpec\",{\"dynamicType\":null,\"dynamicProperty\":null,\"changeVersion\":\"2017-01-11T07:27:26.939683Z\",\"name\":\"SE-PMILANES-WIN\",\"version\":\"vmx-10\",\"uuid\":\"\",\"instanceUuid\":\"5018f5f2-1a77-67c0-4b66-9b1972ba034a\",\"npivNodeWorldWideName\":[0],\"npivPortWorldWideName\":[0],\"npivWorldWideNameType\":null,\"npivDesiredNodeWwns\":0,\"npivDesiredPortWwns\":0,\"npivTemporaryDisabled\":true,\"npivOnNonRdmDisks\":false,\"npivWorldWideNameOp\":null,\"locationId\":\"\",\"guestId\":\"windows8Server64Guest\",\"alternateGuestName\":\"\",\"annotation\":\"\",\"files\":null,\"tools\":null,\"flags\":null,\"consolePreferences\":null,\"powerOpInfo\":null,\"numCPUs\":1,\"numCoresPerSocket\":null,\"memoryMB\":2048,\"memoryHotAddEnabled\":false,\"cpuHotAddEnabled\":false,\"cpuHotRemoveEnabled\":false,\"virtualICH7MPresent\":null,\"virtualSMCPresent\":null,\"deviceChange\":[\"[Lcom.vmware.vim25.VirtualDeviceConfigSpec;\",[[\"com.vmware.vim25.VirtualDeviceConfigSpec\",{\"dynamicType\":null,\"dynamicProperty\":null,\"operation\":\"add\",\"fileOperation\":null,\"device\":[\"com.vmware.vim25.VirtualIDEController\",{\"dynamicType\":null,\"dynamicProperty\":null,\"key\":200,\"deviceInfo\":[\"com.vmware.vim25.Description\",{\"dynamicType\":null,\"dynamicProperty\":null,\"label\":\"IDE 0\",\"summary\":\"IDE 0\"}],\"backing\":null,\"connectable\":null,\"slotInfo\":null,\"controllerKey\":null,\"unitNumber\":null,\"busNumber\":0,\"device\":null}]}],[\"com.vmware.vim25.VirtualDeviceConfigSpec\",{\"dynamicType\":null,\"dynamicProperty\":null,\"operation\":\"add\",\"fileOperation\":null,\"device\":[\"com.vmware.vim25.VirtualIDEController\",{\"dynamicType\":null,\"dynamicProperty\":null,\"key\":201,\"deviceInfo\":[\"com.vmware.vim25.Description\",{\"dynamicType\":null,\"dynamicProperty\":null,\"label\":\"IDE 1\",\"summary\":\"IDE 1\"}],\"backing\":null,\"connectable\":null,\"slotInfo\":null,\"controllerKey\":null,\"unitNumber\":null,\"busNumber\":1,\"device\":[3002]}]}],[\"com.vmware.vim25.VirtualDeviceConfigSpec\",{\"dynamicType\":null,\"dynamicProperty\":null,\"operation\":\"add\",\"fileOperation\":null,\"device\":[\"com.vmware.vim25.VirtualPS2Controller\",{\"dynamicType\":null,\"dynamicProperty\":null,\"key\":300,\"deviceInfo\":[\"com.vmware.vim25.Description\",{\"dynamicType\":null,\"dynamicProperty\":null,\"label\":\"PS2 controller 0\",\"summary\":\"PS2 controller 0\"}],\"backing\":null,\"connectable\":null,\"slotInfo\":null,\"controllerKey\":null,\"unitNumber\":null,\"busNumber\":0,\"device\":[600,700]}]}],[\"com.vmware.vim25.VirtualDeviceConfigSpec\",{\"dynamicType\":null,\"dynamicProperty\":null,\"operation\":\"add\",\"fileOperation\":null,\"device\":[\"com.vmware.vim25.VirtualPCIController\",{\"dynamicType\":null,\"dynamicProperty\":null,\"key\":100,\"deviceInfo\":[\"com.vmware.vim25.Description\",{\"dynamicType\":null,\"dynamicProperty\":null,\"label\":\"PCI controller 0\",\"summary\":\"PCI controller 0\"}],\"backing\":null,\"connectable\":null,\"slotInfo\":null,\"controllerKey\":null,\"unitNumber\":null,\"busNumber\":0,\"device\":[500,12000,1000,4000]}]}],[\"com.vmware.vim25.VirtualDeviceConfigSpec\",{\"dynamicType\":null,\"dynamicProperty\":null,\"operation\":\"add\",\"fileOperation\":null,\"device\":[\"com.vmware.vim25.VirtualSIOController\",{\"dynamicType\":null,\"dynamicProperty\":null,\"key\":400,\"deviceInfo\":[\"com.vmware.vim25.Description\",{\"dynamicType\":null,\"dynamicProperty\":null,\"label\":\"SIO controller 0\",\"summary\":\"SIO controller 0\"}],\"backing\":null,\"connectable\":null,\"slotInfo\":null,\"controllerKey\":null,\"unitNumber\":null,\"busNumber\":0,\"device\":null}]}],[\"com.vmware.vim25.VirtualDeviceConfigSpec\",{\"dynamicType\":null,\"dynamicProperty\":null,\"operation\":\"add\",\"fileOperation\":null,\"device\":[\"com.vmware.vim25.VirtualKeyboard\",{\"dynamicType\":null,\"dynamicProperty\":null,\"key\":600,\"deviceInfo\":[\"com.vmware.vim25.Description\",{\"dynamicType\":null,\"dynamicProperty\":null,\"label\":\"Keyboard \",\"summary\":\"Keyboard\"}],\"backing\":null,\"connectable\":null,\"slotInfo\":null,\"controllerKey\":300,\"unitNumber\":0}]}],[\"com.vmware.vim25.VirtualDeviceConfigSpec\",{\"dynamicType\":null,\"dynamicProperty\":null,\"operation\":\"add\",\"fileOperation\":null,\"device\":[\"com.vmware.vim25.VirtualPointingDevice\",{\"dynamicType\":null,\"dynamicProperty\":null,\"key\":700,\"deviceInfo\":[\"com.vmware.vim25.Description\",{\"dynamicType\":null,\"dynamicProperty\":null,\"label\":\"Pointing device\",\"summary\":\"Pointing device; Device\"}],\"backing\":[\"com.vmware.vim25.VirtualPointingDeviceDeviceBackingInfo\",{\"dynamicType\":null,\"dynamicProperty\":null,\"deviceName\":\"\",\"useAutoDetect\":false,\"hostPointingDevice\":\"autodetect\"}],\"connectable\":null,\"slotInfo\":null,\"controllerKey\":300,\"unitNumber\":1}]}],[\"com.vmware.vim25.VirtualDeviceConfigSpec\",{\"dynamicType\":null,\"dynamicProperty\":null,\"operation\":\"add\",\"fileOperation\":null,\"device\":[\"com.vmware.vim25.VirtualMachineVideoCard\",{\"dynamicType\":null,\"dynamicProperty\":null,\"key\":500,\"deviceInfo\":[\"com.vmware.vim25.Description\",{\"dynamicType\":null,\"dynamicProperty\":null,\"label\":\"Video card \",\"summary\":\"Video card\"}],\"backing\":null,\"connectable\":null,\"slotInfo\":null,\"controllerKey\":100,\"unitNumber\":0,\"videoRamSizeInKB\":4096,\"numDisplays\":1,\"useAutoDetect\":false,\"enable3DSupport\":false,\"use3dRenderer\":\"automatic\"}]}],[\"com.vmware.vim25.VirtualDeviceConfigSpec\",{\"dynamicType\":null,\"dynamicProperty\":null,\"operation\":\"add\",\"fileOperation\":null,\"device\":[\"com.vmware.vim25.VirtualMachineVMCIDevice\",{\"dynamicType\":null,\"dynamicProperty\":null,\"key\":12000,\"deviceInfo\":[\"com.vmware.vim25.Description\",{\"dynamicType\":null,\"dynamicProperty\":null,\"label\":\"VMCI device\",\"summary\":\"Device on the virtual machine PCI bus that provides support for the virtual machine communication interface\"}],\"backing\":null,\"connectable\":null,\"slotInfo\":[\"com.vmware.vim25.VirtualDevicePciBusSlotInfo\",{\"dynamicType\":null,\"dynamicProperty\":null,\"pciSlotNumber\":32}],\"controllerKey\":100,\"unitNumber\":17,\"id\":-1098312415,\"allowUnrestrictedCommunication\":false}]}],[\"com.vmware.vim25.VirtualDeviceConfigSpec\",{\"dynamicType\":null,\"dynamicProperty\":null,\"operation\":\"add\",\"fileOperation\":null,\"device\":[\"com.vmware.vim25.ParaVirtualSCSIController\",{\"dynamicType\":null,\"dynamicProperty\":null,\"key\":1000,\"deviceInfo\":[\"com.vmware.vim25.Description\",{\"dynamicType\":null,\"dynamicProperty\":null,\"label\":\"SCSI controller 0\",\"summary\":\"VMware paravirtual SCSI\"}],\"backing\":null,\"connectable\":null,\"slotInfo\":[\"com.vmware.vim25.VirtualDevicePciBusSlotInfo\",{\"dynamicType\":null,\"dynamicProperty\":null,\"pciSlotNumber\":160}],\"controllerKey\":100,\"unitNumber\":3,\"busNumber\":0,\"device\":[2000],\"hotAddRemove\":true,\"sharedBus\":\"noSharing\",\"scsiCtlrUnitNumber\":7}]}],[\"com.vmware.vim25.VirtualDeviceConfigSpec\",{\"dynamicType\":null,\"dynamicProperty\":null,\"operation\":\"add\",\"fileOperation\":null,\"device\":[\"com.vmware.vim25.VirtualDisk\",{\"dynamicType\":null,\"dynamicProperty\":null,\"key\":2000,\"deviceInfo\":[\"com.vmware.vim25.Description\",{\"dynamicType\":null,\"dynamicProperty\":null,\"label\":\"Hard disk 1\",\"summary\":\"41,943,040 KB\"}],\"backing\":[\"com.vmware.vim25.VirtualDiskFlatVer2BackingInfo\",{\"dynamicType\":null,\"dynamicProperty\":null,\"fileName\":\"[Tegile_Demo] SE-PMILANES-WIN/SE-PMILANES-WIN.vmdk\",\"datastore\":[\"com.vmware.vim25.ManagedObjectReference\",{\"val\":\"datastore-34\",\"type\":\"Datastore\",\"_value\":\"datastore-34\"}],\"diskMode\":\"persistent\",\"split\":false,\"writeThrough\":false,\"thinProvisioned\":true,\"eagerlyScrub\":null,\"uuid\":\"6000C295-d731-50de-6646-e95649365288\",\"contentId\":\"01ebab673982d8e3aa74f0711b8fd5dd\",\"changeId\":null,\"parent\":null,\"deltaDiskFormat\":null,\"digestEnabled\":false,\"deltaGrainSize\":null}],\"connectable\":null,\"slotInfo\":null,\"controllerKey\":1000,\"unitNumber\":0,\"capacityInKB\":41943040,\"shares\":[\"com.vmware.vim25.SharesInfo\",{\"dynamicType\":null,\"dynamicProperty\":null,\"shares\":1000,\"level\":\"normal\"}],\"storageIOAllocation\":[\"com.vmware.vim25.StorageIOAllocationInfo\",{\"dynamicType\":null,\"dynamicProperty\":null,\"limit\":-1,\"shares\":[\"com.vmware.vim25.SharesInfo\",{\"dynamicType\":null,\"dynamicProperty\":null,\"shares\":1000,\"level\":\"normal\"}]}]}]}],[\"com.vmware.vim25.VirtualDeviceConfigSpec\",{\"dynamicType\":null,\"dynamicProperty\":null,\"operation\":\"add\",\"fileOperation\":null,\"device\":[\"com.vmware.vim25.VirtualVmxnet3\",{\"dynamicType\":null,\"dynamicProperty\":null,\"key\":4000,\"deviceInfo\":[\"com.vmware.vim25.Description\",{\"dynamicType\":null,\"dynamicProperty\":null,\"label\":\"Network adapter 1\",\"summary\":\"VLAN56_Servers_Test\"}],\"backing\":[\"com.vmware.vim25.VirtualEthernetCardNetworkBackingInfo\",{\"dynamicType\":null,\"dynamicProperty\":null,\"deviceName\":\"VLAN56_Servers_Test\",\"useAutoDetect\":false,\"network\":[\"com.vmware.vim25.ManagedObjectReference\",{\"val\":\"network-44145\",\"type\":\"Network\",\"_value\":\"network-44145\"}],\"inPassthroughMode\":null}],\"connectable\":[\"com.vmware.vim25.VirtualDeviceConnectInfo\",{\"dynamicType\":null,\"dynamicProperty\":null,\"startConnected\":true,\"allowGuestControl\":true,\"connected\":true,\"status\":\"ok\"}],\"slotInfo\":[\"com.vmware.vim25.VirtualDevicePciBusSlotInfo\",{\"dynamicType\":null,\"dynamicProperty\":null,\"pciSlotNumber\":192}],\"controllerKey\":100,\"unitNumber\":7,\"addressType\":\"assigned\",\"macAddress\":\"00:50:56:98:45:75\",\"wakeOnLanEnabled\":true}]}]]],\"cpuAllocation\":null,\"memoryAllocation\":null,\"latencySensitivity\":null,\"cpuAffinity\":null,\"memoryAffinity\":null,\"networkShaper\":null,\"cpuFeatureMask\":null,\"extraConfig\":null,\"swapPlacement\":\"inherit\",\"bootOptions\":null,\"vAppConfig\":null,\"ftInfo\":null,\"vAppConfigRemoved\":null,\"vAssertsEnabled\":false,\"changeTrackingEnabled\":true,\"firmware\":\"bios\",\"maxMksConnections\":40,\"guestAutoLockEnabled\":false,\"managedBy\":null,\"memoryReservationLockedToMax\":false,\"nestedHVEnabled\":false,\"vPMCEnabled\":false,\"scheduledHardwareUpgradeInfo\":null,\"vappConfig\":null,\"vassertsEnabled\":false,\"vpmcenabled\":false,\"vappConfigRemoved\":null}]"
+}
