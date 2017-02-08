@@ -12,6 +12,7 @@ class rubrik::sla_domain::set (
       command   => $cmd,
       cwd       => $path,
       logoutput => on_failure,
+      provider  => shell,
     }
   }
   else{
