@@ -1,9 +1,9 @@
-class rubrik::sla_domain::set inherits rubrik::(
+class rubrik::sla_domain::set (
   $rubriksla,
   $rubriknode,
   $rubrikpass,
   $rubrikuser,
-  )
+  ) inherits rubrik
 {
   if $::sladomain != $rubriksla{
     notify{"Rubrik SLA Domain out of compliance ${::sladomain}, reapplying ${rubriksla}": }
