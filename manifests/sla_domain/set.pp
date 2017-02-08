@@ -1,4 +1,4 @@
-class rubrik::sla_domain::set(
+class rubrik::sla_domain::set inherits rubrik(
   $rubriksla,
   $rubriknode,
   $rubrikpass,
