@@ -3,7 +3,7 @@ class rubrik::sla_domain::set (
   ) inherits rubrik
 {
   if $::sladomain != $rubriksla{
-    notify{"Rubrik SLA Domain out of compliance ${::sladomain}, reapplying ${rubriksla}": }
+    notify{"Rubrik SLA Domain out of compliance ${::sladomain}, reapplying ${rubrik::rubrikpass}": }
     $script = '/opt/puppetlabs/puppet/cache/lib/facter/ruby-bits/rubrikSetSla.rb'
     $ruby = '/opt/puppetlabs/puppet/bin/ruby'
     $cmd =  "${ruby} ${script} ${::hostname} ${rubriksla}"
