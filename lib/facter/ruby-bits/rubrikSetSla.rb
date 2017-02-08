@@ -2,37 +2,24 @@ $LOAD_PATH.unshift File.expand_path('../lib/', __FILE__)
 require 'getVm.rb'
 require 'getSlaHash.rb'
 require 'setSla.rb'
+require 'parseoptions.rb'
 
-# usage setSla.rb [vmname] [desiredSlaName]
-
-(machineName, desiredSla)=ARGV
-if machineName.nil? || desiredSla.nil?
-  Kernel.abort("\n ----------------------------------------------------\n
-  Use this in order to confirm/change Rubrik SLA Domain for a vm_name. \n
-  The script will confirm current subscription, if it exists, and act accordingly
-  \t\t If SLA Domain is already set to desired name:
-  \t\t\t * Rubrik SLA Domain already set properly
-  \t\t If SLA Domain does not exist:
-  \t\t\t * Rubrik SLA Domain not set properly
-  \t\t\t * Rubrik SLA Domain does NOT exist, cannot comply
-  \t\t If SLA Domain exists and is VM is reassigned
-  \t\t\t * Rubrik SLA Domain not set properly
-  \t\t\t * Rubrik SLA Domain Exists, setting vm_name to use it
-  \t\t\t * Rubrik SLA Domain Set to sla_name
-  \tUsage : rubrikSetSla [vm_name] [sla_name]
-  \n ----------------------------------------------------")
+# Global options
+@options = OptparseExample.parse(ARGV)
+if @options.vm.nil?
+  Kernel.abort("Need Hostname")
 end
 
 sla_hash = getSlaHash()
 
-if desiredSla == sla_hash[findVmItem(machineName, 'effectiveSlaDomainId')]
+if @options.sla == sla_hash[findVmItem(@options.vm, 'effectiveSlaDomainId')]
 else
-  if sla_hash.invert[desiredSla]
-    out = setSla(findVmItem(machineName, 'managedId'), sla_hash.invert[desiredSla])
+  if sla_hash.invert[@options.sla]
+    out = setSla(findVmItem(@options.vm, 'managedId'), sla_hash.invert[@options.sla])
     if !out.nil?
       puts out
     else
-      puts "Rubrik SLA Domain Set to #{desiredSla}"
+      puts "Rubrik SLA Domain Set to #{@options.sla}"
     end
   else
     puts "Rubrik SLA Domain does NOT exist, cannot comply"
