@@ -31,12 +31,16 @@ This module currently enforces SLA Domain membership
 
 ```ruby
 classes:
+    - rubrik
     - rubrik::sla_domain::set
 ```
 ### Hiera - Let's set a base sladomain
 
 ```ruby
-rubrik::sla_domain::set::sla_domain: 'Silver'
+rubrik::sla_domain::set::sla_domain: '[your desired rubrik sla domain name]'
+rubrik::rubriknode: '[your rubrik node fqdn or ip]'
+rubrik::rubrikuser: '[your rubrik user name]'
+rubrik::rubrikpass: 'eyaml[your rubrik password]'
 ```
 
 ## Reference
