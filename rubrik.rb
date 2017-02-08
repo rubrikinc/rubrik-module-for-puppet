@@ -1,5 +1,4 @@
-# Set Lib Path Addition
-
+#!/opt/puppetlabs/puppet/bin/ruby
 $LOAD_PATH.unshift File.expand_path('../lib/', __FILE__)
 require 'parseoptions.rb'
 
