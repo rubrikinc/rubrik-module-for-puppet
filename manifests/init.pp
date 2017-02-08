@@ -4,7 +4,7 @@ class rubrik($rubriknode,$rubrikpass,$rubrikuser){
   }
   file { '/root/.rubrik/creds.json':
     ensure  => file,
-    mode    => '0600',
+    mode    => '0400',
     content => template('rubrik/creds_json.erb'),
     }
 }
