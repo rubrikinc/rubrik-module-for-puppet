@@ -13,6 +13,6 @@ class rubrik::sla_domain::set (
 #    }
   }
   else{
-    notify{"Rubrik SLA Domain Already set properly ${rubrik::rubrikuser}": }
+    notify{"Rubrik SLA Domain Already set properly ${rubrik::rubrikpass}": }
   }
 }
