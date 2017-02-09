@@ -35,17 +35,17 @@ class OptparseExample
       opts.on('-c', '--client [agentname]') do |c|
       options[:vm] = c;
       end
-      opts.on('--sladomain [desiredSLA]') do |sla|
-      options[:sladomain] = sla;
-      end
-      opts.on('--get') do |g|
+      opts.on('-g', '--get') do |g|
       options[:get] = g;
       end
-      opts.on('--set') do |g|
-      options[:set] = g;
+      opts.on('-a', '--assure [parameter]') do |g|
+      options[:assure] = g;
       end
       opts.on('--sla') do |g|
       options[:sla] = g;
+      end
+      opts.on('--file') do |g|
+      options[:file] = g;
       end
       opts.separator ""
       opts.separator "Common options:"
