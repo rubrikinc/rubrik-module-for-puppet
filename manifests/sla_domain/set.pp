@@ -14,7 +14,7 @@ class rubrik::sla_domain::set (
      -n ${rubrik::rubriknode} \
      -u ${rubrik::rubrikuser} \
      -p ${rubrik::rubrikpass} \
-     --sla --set --sladomain ${rubriksla}"
+     --sla --assure ${rubriksla}"
     exec { 'update-sla':
       command   => $cmd,
       cwd       => $path,
