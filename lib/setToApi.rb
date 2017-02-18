@@ -2,6 +2,7 @@ require 'net/https'
 require 'uri'
 
 def setToApi(p,l)
+    puts l.to_json
     (token,server) = get_token
     url = 'https://' + server + '/'
     uri = URI.parse(url)

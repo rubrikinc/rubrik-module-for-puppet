@@ -41,6 +41,9 @@ class OptparseExample
       opts.on('-a', '--assure [parameter]') do |g|
       options[:assure] = g;
       end
+      opts.on('--dr') do |g|
+      options[:dr] = g;
+      end
       opts.on('--sla') do |g|
       options[:sla] = g;
       end

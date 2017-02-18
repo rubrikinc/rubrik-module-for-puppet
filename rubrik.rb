@@ -21,6 +21,28 @@ if @options.file then
   end
 end
 
+if @options.dr then
+    require 'getVm.rb'
+    require 'uri'
+    require 'json'
+    require 'setToApi.rb'
+    #Get Cluster ID
+    clusterInfo=getFromApi("/api/v1/cluster/me")
+    id=findVmItem(@options.vm,'id')
+    #Get Latest Snapshot
+    h=getFromApi("/api/v1/vmware/vm/#{id}/snapshot")
+    latestSnapshot =  h['data'][0]['id']
+    #Get vmWare Hosts for the Cluster
+    vmwareHosts=getFromApi("/api/v1/vmware/host")
+    hostList = Array.new
+    vmwareHosts["data"].each do |vmwareHosts|
+	hostList.push(vmwareHosts["id"]) if vmwareHosts["primaryClusterUuid"] === clusterInfo["id"]
+    end
+    puts '/api/v1/vmware/vm/snapshot/' + latestSnapshot + '/instant_recover'
+    o = setToApi('/api/v1/vmware/vm/snapshot/' + latestSnapshot + '/instant_recover',{ "snapshotId" => "#{latestSnapshot}","vmName" => "#{@options.vm}","hostId" => "#{hostList[0]}","removeNetworkDevices" => true})
+end
+
+
 if @options.sla then
   require 'getSlaHash.rb'
   require 'getVm.rb'
