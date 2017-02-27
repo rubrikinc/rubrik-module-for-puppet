@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# Set some basic VARS
+
+DNSSERVER="172.17.48.11" # Need to facter this
+NAME=`nmcli -t -f NAME con sho`
+DEV=`nmcli -t --fields GENERAL.DEVICES c s "$NAME"| sed -r 's/^.*:(.*)$/\1/'`
+IP=<%= @rubrikDRIP %>
+GW=<%= @rubrikDRGW %>
+FQDN=`facter fqdn`
+# If I can't get out, try the failover IP
+
+if ping -q -c 1 -W 1 $DNSSERVER >/dev/null; then # just ping the nameserver
+ logger -s "rubrik - IP can get out, nothing to set"  
+else # Here we may want to have it try between both IPs a few times until it gets one going
+ nmcli dev disconnect $DEV 
+ nmcli con mod "$NAME" ip4 $IP gw4 $GW # These vars will be facts
+ logger -s "rubrik - Reconfiguring Interface"
+ nmcli con up "$NAME"
+fi
+
+logger -s "rubrik - Update time"
+#Update time
+/sbin/ntpdate -u pool.ntp.org
+
+# Let's reset the A Record. 
+IPADDR=`nmcli -t --fields IP4.ADDRESS device show $DEV | sed -r 's/^.*:(.*)\/.*$/\1/'`
+logger -s "rubrik - Modifying DNS for $FQDN to point to $IPADDR"
+# Here's our DDNS call
+cat <<EOF | nsupdate -vd -g | logger -s
+server $DNSSERVER
+prereq nxrrset $FQDN. CNAME
+update delete $FQDN. A
+update add $FQDN. 86400 A $IPADDR
+;show
+send
+EOF
