@@ -5,8 +5,8 @@
 DNSSERVER="172.17.48.11" # Need to facter this
 NAME=`nmcli -t -f NAME con sho`
 DEV=`nmcli -t --fields GENERAL.DEVICES c s "$NAME"| sed -r 's/^.*:(.*)$/\1/'`
-IP=<%= @rubrikDRIP %>
-GW=<%= @rubrikDRGW %>
+IP=<%= @rubrikDR_IP %>
+GW=<%= @rubrikDR_GW %>
 FQDN=`facter fqdn`
 # If I can't get out, try the failover IP
 
