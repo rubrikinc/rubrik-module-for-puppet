@@ -2,6 +2,9 @@ class rubrik::dr($rubrikDR_IP,$rubrikDR_GW,$rubrikDR_REALM,$rubrikDR_USER,$rubri
   package {'krb5-workstation':
     ensure => 'installed',
     }
+  package {'bind-utils':
+    ensure => 'installed',
+    }
   file { '/root/rubrikDR.sh':
     ensure  => file,
     mode    => '0500',
