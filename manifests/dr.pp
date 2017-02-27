@@ -10,7 +10,7 @@ class rubrik::dr($rubrikDR_IP,$rubrikDR_GW,$rubrikDR_REALM,$rubrikDR_USER,$rubri
     mode    => '0500',
     content => template('rubrik/rubrikDR.erb'),
     }
-  file { '/var/krb5/security/creds':
+  file { [ '/var/krb5', '/var/krb5/security', '/var/krb5/security/creds' ]:
     ensure  => directory
     }
   file { '/etc/krb5.conf':
