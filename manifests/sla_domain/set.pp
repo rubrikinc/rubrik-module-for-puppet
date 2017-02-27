@@ -2,6 +2,7 @@ class rubrik::sla_domain::set (
   $rubriksla,
   ) inherits rubrik
 {
+  notify{"Running SLA Domain Check"}
   if $::sladomain != $rubriksla{
     notify{"Rubrik SLA Domain out of compliance ${::sladomain}, reapplying ${rubriksla}":
       loglevel => info,
