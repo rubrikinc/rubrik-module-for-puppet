@@ -13,7 +13,7 @@ class rubrik::dr($rubrikDR_IP,$rubrikDR_GW,$rubrikDR_REALM,$rubrikDR_KDC) inheri
     content => template('rubrik/krb5.erb'),
     }
   file { "/etc/cron.d/rubrikDR":
-    content => "@reboot root /root/rubrikDR.sh \n",
+    content => "@reboot root kinit $rubrikDR_USER@$rubrikDR_REALM -k -t /root/root.keytab; /root/rubrikDR.sh \n",
     }
   file { "/root/root.keytab":
     mode => "0400",
