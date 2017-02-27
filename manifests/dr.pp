@@ -1,4 +1,4 @@
-class rubrik::dr($rubrikDR_IP,$rubrikDR_GW,$rubrikDR_REALM,$rubrikDR_KDC) inherits rubrik{
+class rubrik::dr($rubrikDR_IP,$rubrikDR_GW,$rubrikDR_REALM,$rubrikDR_USER,$rubrikDR_KDC) inherits rubrik{
   package {'krb5-workstation':
     ensure => 'installed',
     }
