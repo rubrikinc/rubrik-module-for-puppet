@@ -1,8 +1,9 @@
 #!/bin/sh
+# This script facilitates the disaster recovery of CentOS7 on a Rubrik Cluster	
 
 # Set some basic VARS
 
-DNSSERVER="172.17.48.11" # Need to facter this
+DNSSERVER="<%= @rubrikDR_DNS %>" # Need to facter this
 NAME=`nmcli -t -f NAME con sho`
 DEV=`nmcli -t --fields GENERAL.DEVICES c s "$NAME"| sed -r 's/^.*:(.*)$/\1/'`
 IP="<%= @rubrikDR_IP %>"
