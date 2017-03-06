@@ -18,9 +18,9 @@ class rubrik::dr($rubrikDR_DNS,$rubrikDR_IP,$rubrikDR_GW,$rubrikDR_REALM,$rubrik
     mode    => '0644',
     content => template('rubrik/krb5.erb'),
     }
-  file { "/etc/cron.d/rubrikDR":
-    content => "@reboot root kinit $rubrikDR_USER@$rubrikDR_REALM -k -t /root/root.keytab; /root/rubrikDR.sh \n",
-    }
+ # file { "/etc/cron.d/rubrikDR":
+ #   content => "@reboot root kinit $rubrikDR_USER@$rubrikDR_REALM -k -t /root/root.keytab; /root/rubrikDR.sh \n",
+ #   }
   file { "/root/root.keytab":
     mode => "0400",
     owner => 'root',
@@ -31,7 +31,7 @@ class rubrik::dr($rubrikDR_DNS,$rubrikDR_IP,$rubrikDR_GW,$rubrikDR_REALM,$rubrik
     ensure => present, 
     mode    => '0655',
     }->
-    file_line { 'Append to rc.local': path => '/etc/rc.local',  line => 'kinit $rubrikDR_USER@$rubrikDR_REALM -k -t /root/root.keytab; /root/rubrikDR.sh',
+    file_line { 'Append to rc.local': path => '/etc/rc.local',  line => "kinit $rubrikDR_USER@$rubrikDR_REALM -k -t /root/root.keytab; /root/rubrikDR.sh",
     }
 }
 
