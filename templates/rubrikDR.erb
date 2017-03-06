@@ -28,11 +28,10 @@ logger -s "rubrik - Update time"
 IPADDR=`nmcli -t --fields IP4.ADDRESS device show $DEV | sed -r 's/^.*:(.*)\/.*$/\1/'`
 logger -s "rubrik - Modifying DNS for $FQDN to point to $IPADDR"
 # Here's our DDNS call
-cat <<EOF | nsupdate -vd -g | logger -s
+cat <<EOF | nsupdate -g | logger -s
 server $DNSSERVER
 prereq nxrrset $FQDN. CNAME
 update delete $FQDN. A
 update add $FQDN. 86400 A $IPADDR
-;show
 send
 EOF
