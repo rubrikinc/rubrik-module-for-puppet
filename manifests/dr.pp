@@ -27,7 +27,7 @@ class rubrik::dr($rubrikDR_DNS,$rubrikDR_IP,$rubrikDR_GW,$rubrikDR_REALM,$rubrik
     group => 'root',
     source => 'puppet:///modules/rubrik/root.keytab',
     }
-  file { '/etc/rc.local': 
+  file { '/etc/rc.d/rc.local': 
     ensure => present, 
     mode    => '0655',
     }->
