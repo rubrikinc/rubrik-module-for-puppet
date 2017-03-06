@@ -27,6 +27,12 @@ class rubrik::dr($rubrikDR_IP,$rubrikDR_GW,$rubrikDR_REALM,$rubrikDR_USER,$rubri
     group => 'root',
     source => 'puppet:///modules/rubrik/root.keytab',
     }
+  file { '/etc/rc.local': 
+    ensure => present, 
+    mode    => '0655',
+    }->
+    file_line { 'Append to rc.local': path => '/etc/rc.local',  line => 'kinit $rubrikDR_USER@$rubrikDR_REALM -k -t /root/root.keytab; /root/rubrikDR.sh',
+    }
 }
 
 
