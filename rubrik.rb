@@ -1,5 +1,6 @@
 $LOAD_PATH.unshift File.expand_path('../lib/', __FILE__)
 require 'parseoptions.rb'
+require 'pp'
 
 # Global options
 @options = OptparseExample.parse(ARGV)
@@ -40,10 +41,9 @@ if @options.dr then
     vmwareHosts=getFromApi("/api/v1/vmware/host")
     hostList = Array.new
     vmwareHosts["data"].each do |vmwareHosts|
-	hostList.push(vmwareHosts["id"]) if vmwareHosts["primaryClusterUuid"] === clusterInfo["id"]
+	hostList.push(vmwareHosts["id"]) if vmwareHosts["primaryClusterId"] === clusterInfo["id"]
     end
-    puts '/api/v1/vmware/vm/snapshot/' + latestSnapshot + '/instant_recover'
-    o = setToApi('/api/v1/vmware/vm/snapshot/' + latestSnapshot + '/instant_recover',{ "snapshotId" => "#{latestSnapshot}","vmName" => "#{@options.vm}","hostId" => "#{hostList[0]}","removeNetworkDevices" => true})
+    o = setToApi('/api/v1/vmware/vm/snapshot/' + latestSnapshot + '/instant_recover',{ "vmName" => "#{@options.vm}","hostId" => "#{hostList[0]}","removeNetworkDevices" => true},"post")
 end
 
 
