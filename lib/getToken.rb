@@ -1,31 +1,33 @@
 # Establish Token for subsequent requests during this run
 # No arguments needed
 
+require 'base64'
 require 'json'
-require 'net/https'
-require 'uri'
+require 'faraday'
 
 def get_token()
-  if @options.n then
-    sv=@options.n
-    un=@options.u
-    pw=@options.p
+  # Ensure Options are set to login
+  sv=@options.n
+  un=@options.u
+  pw=@options.p
+
+  conn = Faraday.new(:url => 'https://' + sv) 
+  conn.basic_auth(un, pw)    
+  conn.ssl.verify = false
+  response = conn.post '/api/v1/session'
+  if response.status != 200 
+    # Raise error for failed login
+     msg = JSON.parse(response.body)['message']
+     raise "Rubrik - Unable to authenticate (#{msg})" 
   else
-    require 'getCreds.rb'
-    rh = getCreds
-    sv = rh['server']
-    un = rh['username']
-    pw = rh['password']
+    token = JSON.parse(response.body)['token']
+    return token,sv
+    # Logged in and returning token
   end
-  url = 'https://' + sv + '/'
-  uri = URI.parse(url)
-  h = Net::HTTP.new(uri.host, uri.port)
-  h.use_ssl = true
-  h.verify_mode = OpenSSL::SSL::VERIFY_NONE
-  r = Net::HTTP::Post.new('/api/v1/login')
-  r.add_field('Content-Type', 'application/json')
-  r.body = { 'username' => un, 'password' => pw }.to_json
-  i = h.request(r)
-  o = JSON.parse(i.body)
-  return o['token'],sv
 end
+
+
+
+
+ # Grab the result and return the token
+

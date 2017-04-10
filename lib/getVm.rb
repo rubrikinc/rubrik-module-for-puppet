@@ -4,6 +4,6 @@ require 'getFromApi.rb'
 # Grab Requested [item] from hash and return ony that value
 def findVmItem(t, item)
 	t = t.upcase
-	h = Hash[getFromApi('/api/v1/vmware/vm?search_value='+t)]
+	h = Hash[getFromApi('/api/v1/vmware/vm?name='+t)]
 	return h['data'][0][item]
 end
