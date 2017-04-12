@@ -29,6 +29,9 @@ class OptparseExample
       opts.on('-p', '--password [rubrikpassword]') do |pass|
       options[:p] = pass;
       end
+      opts.on('-l', '--login') do |login|
+      options[:login] = login;
+      end
       opts.on('-u', '--username [rubrikuser]') do |user|
       options[:u] = user;
       end
@@ -40,6 +43,9 @@ class OptparseExample
       end
       opts.on('-a', '--assure [parameter]') do |g|
       options[:assure] = g;
+      end
+      opts.on('--dr') do |g|
+      options[:dr] = g;
       end
       opts.on('--sla') do |g|
       options[:sla] = g;
