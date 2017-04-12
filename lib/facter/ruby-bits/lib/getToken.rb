@@ -7,10 +7,17 @@ require 'faraday'
 
 def get_token()
   # Ensure Options are set to login
-  sv=@options.n
-  un=@options.u
-  pw=@options.p
-
+ if @options.n then
+    sv=@options.n
+    un=@options.u
+    pw=@options.p
+  else
+    require 'getCreds.rb'
+    rh = getCreds
+    sv = rh['server']
+    un = rh['username']
+    pw = rh['password']
+  end
   conn = Faraday.new(:url => 'https://' + sv) 
   conn.basic_auth(un, pw)    
   conn.ssl.verify = false
