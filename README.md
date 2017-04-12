@@ -19,7 +19,7 @@ configuration as it pertains to puppet agents.
 Add the module to your Puppetfile
 ```ruby
 mod 'rubrik',
-  :git  =>  'https://github.com/pmilano1/rubrik'
+  :git  =>  'https://github.com/rubrik-devops/rubrik-puppet'
 ```
 ### What rubrik affects
 
