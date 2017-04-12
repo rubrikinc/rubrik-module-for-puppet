@@ -56,5 +56,6 @@ This module will allow facter to interact with the Agent configuration with rega
 
 ## Development
 
+* Use cases surrounding Disaster Recover Initiatives
 
 ## Release Notes/Contributors/Etc.
