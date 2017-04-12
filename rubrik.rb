@@ -73,6 +73,6 @@ if @options.sla then
       end
     end
   else
-    puts "#{effectiveSla}"
+#    puts "#{effectiveSla}"
   end
 end
