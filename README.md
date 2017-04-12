@@ -4,7 +4,7 @@
 
 1. [Description](#description)
 1. [Setup - The basics of getting started with rubrik](#setup)
-    * [What rubrik affects](#what-rubrik-affects)
+    * [What rubrik-puppet affects](#what-rubrik-affects)
 1. [Usage - Configuration options and additional functionality](#usage)
 1. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 1. [Limitations - OS compatibility, etc.](#limitations)
@@ -44,6 +44,7 @@ rubrik::rubrikpass: 'eyaml[your rubrik password]'
 ```
 
 ## Reference
+This module will allow facter to interact with the Agent configuration with regard to SLA Domains. It will also allow the Agent to self correct based on the configured SLA Domain in your hiera hierarchy.
 
 ## Limitations
 
