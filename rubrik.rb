@@ -54,6 +54,7 @@ if @options.sla then
   effectiveSla = sla_hash[findVmItem(@options.vm, 'effectiveSlaDomainId')]
   if @options.get && effectiveSla then
     # Get the SLA Domain for node
+    puts "#{effectiveSla}"
   end
   if @options.assure && (effectiveSla != @options.assure) then
     require 'setSla.rb'
@@ -65,14 +66,12 @@ if @options.sla then
         if !res.nil?
 	  res = JSON.parse(res)
           if res["effectiveSlaDomain"]["name"] == @options.assure 
-            puts "#{@options.assure}"
+#            puts "#{@options.assure}"
           end
         else
           puts "Rubrik SLA Domain does NOT exist, cannot comply"
         end
       end
     end
-  else
-#    puts "#{effectiveSla}"
   end
 end

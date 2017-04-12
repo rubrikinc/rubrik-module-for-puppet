@@ -14,12 +14,11 @@ def setToApi(endpoint,l,type)
     req.headers['Content-Type'] = 'application/json'
     req.body  = l.to_json
   end
-  if response.status !~ /20/
+  if response.status !~ /202|200/
     #Raise error for failed login
-    if msg = JSON.parse(response.body).message do
-      raise "Rubrik - Error (#{msg})"
-    end
-  else
-  return response.body
+#    if msg = JSON.parse(response.body).message do
+#      raise "Rubrik - Error (#{msg})"
+#    end
+    return response.body
   end
 end
