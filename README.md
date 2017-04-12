@@ -46,7 +46,7 @@ rubrik::rubrikpass: 'eyaml[your rubrik password]'
 ## Reference
 This module will allow facter to interact with the Agent configuration with regard to SLA Domains. It will also allow the Agent to self correct based on the configured SLA Domain in your hiera hierarchy.
 
-## Limitations
+## Tested On
 
 * Rubrik v3.1
 
