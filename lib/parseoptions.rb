@@ -3,17 +3,12 @@ require 'optparse/time'
 require 'ostruct'
 require 'pp'
 
-class OptparseExample
+class parseOptions
 
   CODES = %w[iso-2022-jp shift_jis euc-jp utf8 binary]
   CODE_ALIASES = { "jis" => "iso-2022-jp", "sjis" => "shift_jis" }
 
-  #
-  # Return a structure describing the options.
-  #
   def self.parse(args)
-    # The options specified on the command line will be collected in *options*.
-    # We set default values here.
     options = OpenStruct.new
 
     opt_parser = OptionParser.new do |opts|
@@ -66,4 +61,4 @@ class OptparseExample
     options
   end  # parse()
 
-end  # class OptparseExample
+end  # class 

@@ -3,7 +3,7 @@ require 'parseoptions.rb'
 require 'pp'
 
 # Global options
-@options = OptparseExample.parse(ARGV)
+@options = parseOptions.parse(ARGV)
 
 # Grab the SLAHash to make pretty names
 if @options.file then
