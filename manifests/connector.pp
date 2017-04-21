@@ -1,18 +1,21 @@
 class rubrik::connector ( ) inherits rubrik {
   case $kernel {
     linux: {
-      include wget
-      wget::fetch { "https://${rubrik::rubriknode}/connector/rubrik-agent.x86_64.rpm":
-        destination => '/tmp/',
-        timeout     => 0,
-        verbose     => true,
-        nocheckcertificate     => true
-      } -> 
+      if package { 'rubrik-agent' ensure => 'present' } do nothing
+      else {
+        include wget
+        wget::fetch { "https://${rubrik::rubriknode}/connector/rubrik-agent.x86_64.rpm":
+          destination => '/tmp/',
+          timeout     => 0,
+          verbose     => true,
+          nocheckcertificate     => true
+        } -> 
       
-      package { 'package':
-        provider => 'rpm',
-        ensure => installed,
-        source => "/tmp/rubrik-agent.x86_64.rpm"
+        package { 'package':
+          provider => 'rpm',
+          ensure => installed,
+          source => "/tmp/rubrik-agent.x86_64.rpm"
+        }
       }
     }  
   }
