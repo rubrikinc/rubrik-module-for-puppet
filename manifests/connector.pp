@@ -7,7 +7,7 @@ class rubrik::connector ( ) inherits rubrik {
         timeout     => 0,
         verbose     => false,
         nocheckcertificate     => true
-      }  
+      } -> 
       
       package { 'package':
         provider => 'rpm',
