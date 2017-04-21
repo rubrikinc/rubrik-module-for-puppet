@@ -1,25 +1,24 @@
 class rubrik::connector ( ) inherits rubrik {
-  case $operatingsystem {
+  case $kernel {
     windows: {
       download_file { "Rubrik Agent Download" :
         url   => "https://${rubrik::rubriknode}/connector/RubrikBackupService.zip",
         destination_directory => $rubrik_temp_dir,
-      } ->
-      archive { "$::rubrik_temp_dir/RubrikBackupService.zip":
-        extract       => true,
-        extract_path  => $::rubrik_temp_dir,
-        extract_flags => '-of',
-        cleanup       => true,
-      } ->
+      } #->
+#      archive { "$rubrik_temp_dir/RubrikBackupService.zip":
+#        extract       => true,
+#        extract_path  => $rubrik_temp_dir,
+#        extract_flags => '-of',
+#        cleanup       => true,
+#      } ->
 
-      package { 'rubrik-agent':
-        ensure   => installed,
-        provider => 'msi',
-        source   => "https://${rubrik::rubriknode}/connector/RubrikBackupService.zip",
-      }
+#      package { 'rubrik-agent':
+#        ensure   => installed,
+#        provider => 'msi',
+#        source   => "https://${rubrik::rubriknode}/connector/RubrikBackupService.zip",
+#      }
     }
   }
-  case $kernel {
     linux: {
       if ! defined(Package['rubrik-agent']) {
         include wget
