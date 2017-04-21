@@ -7,7 +7,7 @@ class rubrik::connector ( ) inherits rubrik {
         destination => '/tmp/',
         timeout     => 0,
         verbose     => false,
-        nocertificatecheck     => true
+        nocheckcertificate     => true
       }  
       
       package { 'package':
