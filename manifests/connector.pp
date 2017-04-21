@@ -1,6 +1,7 @@
 class rubrik::connector ( ) inherits rubrik {
   case $kernel {
     linux: {
+      if ! defined(Package['rubrik-agent']) {
         include wget
         wget::fetch { "https://${rubrik::rubriknode}/connector/rubrik-agent.x86_64.rpm":
           destination => '/tmp/',
@@ -14,6 +15,7 @@ class rubrik::connector ( ) inherits rubrik {
           ensure => installed,
           source => "/tmp/rubrik-agent.x86_64.rpm"
         }
+      }
     }  
   }
 }
