@@ -5,7 +5,7 @@ class rubrik::connector ( ) inherits rubrik {
       wget::fetch { "https://${rubrik::rubriknode}/connector/rubrik-agent.x86_64.rpm":
         destination => '/tmp/',
         timeout     => 0,
-        verbose     => false,
+        verbose     => true,
         nocheckcertificate     => true
       } -> 
       
