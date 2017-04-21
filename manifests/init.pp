@@ -9,5 +9,6 @@ class rubrik($rubriknode,$rubrikpass,$rubrikuser){
         mode    => '0400',
         content => template('rubrik/creds_json.erb'),
       }
-   }
+    }
+  }
 }
