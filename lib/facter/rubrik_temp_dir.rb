@@ -29,4 +29,3 @@ Facter.add('rubrik_temp_dir') do
       value
     end
   end
-end
