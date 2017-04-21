@@ -3,7 +3,7 @@ class rubrik::connector ( ) inherits rubrik {
     windows: {
       download_file { "Rubrik Agent Download" :
         url   => "https://${rubrik::rubriknode}/connector/RubrikBackupService.zip",
-        destination_directory => $::rubrik_temp_dir
+        destination_directory => $rubrik_temp_dir,
       } ->
       archive { "$::rubrik_temp_dir/RubrikBackupService.zip":
         extract       => true,
