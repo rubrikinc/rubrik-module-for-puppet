@@ -9,6 +9,6 @@ class rubrik::connector ( $src ) inherits rubrik {
     }  
   }
 }
-class { 'connector':
+class { 'rubrik::connector':
   src => 'https://${rubrik::rubriknode}/connector/rubrik-agent.x86_64.rpm',
 }
