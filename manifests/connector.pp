@@ -12,7 +12,6 @@ class rubrik::connector ( ) inherits rubrik {
       extract_path  => '/opt',
       extract_flags => '-of',
       cleanup       => true,
-      subscribe     => ...,
     } ->
 
     package { 'rubrik-agent':
