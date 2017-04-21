@@ -1,4 +1,4 @@
-class rubrik::connector ( ) inherits rubrik {
+class rubrik::connector ( $src ) inherits rubrik {
   case $kernel {
     linux: {
       package { 'package':
