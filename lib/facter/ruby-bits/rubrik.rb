@@ -3,7 +3,7 @@ require 'parseoptions.rb'
 require 'pp'
 
 # Global options
-@options = OptparseExample.parse(ARGV)
+@options = ParseOptions.parse(ARGV)
 
 # Grab the SLAHash to make pretty names
 if @options.file then
@@ -65,9 +65,9 @@ if @options.sla then
         res = setSla(findVmItem(@options.vm, 'id'), sla_hash.invert[@options.assure])
         if !res.nil?
 	  res = JSON.parse(res)
-          if res["effectiveSlaDomain"]["name"] == @options.assure 
-#            puts "#{@options.assure}"
-          end
+         # if res["effectiveSlaDomain"]["name"] == @options.assure 
+         #   puts "#{@options.assure}"
+         # end
         else
           puts "Rubrik SLA Domain does NOT exist, cannot comply"
         end
