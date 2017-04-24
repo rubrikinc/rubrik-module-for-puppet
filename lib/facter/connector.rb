@@ -5,9 +5,9 @@ Facter.add(:rubrik_connector) do
       conn_status = (system( "powershell (Get-Service 'Rubrik Backup Service' -ErrorAction SilentlyContinue).status") )
       puts "!" + conn_status + "!"
       if conn_status == "Running"
-        true
+        'true'
       else
-        false
+        'false'
       end
     end
   end
