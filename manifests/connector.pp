@@ -9,13 +9,12 @@ class rubrik::connector ( ) inherits rubrik {
       windows::unzip { "$rubrik_temp_dir\RubrikBackupService.zip":
         destination => $rubrik_temp_dir,
         unless     => '$rubrik_temp_dir\RubrikBackupService.msi',
+      } ->
+      package { 'rubrik-agent':
+        ensure   => installed,
+        provider => 'msi',
+        source   => "$rubrik_temp_dir\RubrikBackupService.msi",
       }
-
-#      package { 'rubrik-agent':
-#        ensure   => installed,
-#        provider => 'msi',
-#        source   => "https://${rubrik::rubriknode}/connector/RubrikBackupService.zip",
-     # }
     }
   
     'linux': {
