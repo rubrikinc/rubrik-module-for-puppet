@@ -1,6 +1,6 @@
 class rubrik::connector ( ) inherits rubrik {
   case $kernel {
-    windows: {
+    'windows': {
       download_file { "Rubrik Agent Download" :
         url   => "https://${rubrik::rubriknode}/connector/RubrikBackupService.zip",
         destination_directory => $rubrik_temp_dir,
@@ -19,7 +19,7 @@ class rubrik::connector ( ) inherits rubrik {
       }
     }
   
-    linux: {
+    'linux': {
       if ! defined(Package['rubrik-agent']) {
         include wget
         wget::fetch { "https://${rubrik::rubriknode}/connector/rubrik-agent.x86_64.rpm":
