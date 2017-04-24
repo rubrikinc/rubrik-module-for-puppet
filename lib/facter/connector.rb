@@ -6,8 +6,6 @@ Facter.add(:rubrik_connector) do
       status = system( "powershell (Get-Service 'Rubrik Backup Service' -ErrorAction SilentlyContinue).status") 
       if status == "Running"
         rubrik_connector = "Installed"
-      else
-        rubrik_connector = ""
       end
     end
   end
