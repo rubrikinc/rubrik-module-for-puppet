@@ -16,7 +16,7 @@ class rubrik::connector ( ) inherits rubrik {
 #        ensure   => installed,
 #        provider => 'msi',
 #        source   => "https://${rubrik::rubriknode}/connector/RubrikBackupService.zip",
-      }
+     # }
     }
   
     'linux': {
