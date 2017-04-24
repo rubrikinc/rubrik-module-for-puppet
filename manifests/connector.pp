@@ -5,13 +5,13 @@ class rubrik::connector ( ) inherits rubrik {
         url   => "https://${rubrik::rubriknode}/connector/RubrikBackupService.zip",
         destination_directory => $rubrik_temp_dir,
         insecure => true,
+      } ->
+      archive { "$rubrik_temp_dir/RubrikBackupService.zip":
+        extract       => true,
+        extract_path  => $rubrik_temp_dir,
+        extract_flags => '-of',
+        cleanup       => true,
       } #->
-#      archive { "$rubrik_temp_dir/RubrikBackupService.zip":
-#        extract       => true,
-#        extract_path  => $rubrik_temp_dir,
-#        extract_flags => '-of',
-#        cleanup       => true,
-#      } ->
 
 #      package { 'rubrik-agent':
 #        ensure   => installed,
