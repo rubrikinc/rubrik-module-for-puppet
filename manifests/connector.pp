@@ -4,7 +4,7 @@ class rubrik::connector ( ) inherits rubrik {
       download_file { "Rubrik Agent Download" :
         url   => "https://${rubrik::rubriknode}/connector/RubrikBackupService.zip",
         destination_directory => $rubrik_temp_dir,
-        #insecure => true,
+        insecure => true,
       } #->
 #      archive { "$rubrik_temp_dir/RubrikBackupService.zip":
 #        extract       => true,
