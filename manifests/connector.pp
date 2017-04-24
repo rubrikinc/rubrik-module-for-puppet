@@ -6,15 +6,9 @@ class rubrik::connector ( ) inherits rubrik {
         destination_directory => $rubrik_temp_dir,
         insecure => true,
       } ->
-
-      include '::archive'
-
-      archive { "$rubrik_temp_dir/RubrikBackupService.zip":
-        extract       => true,
-        extract_path  => $rubrik_temp_dir,
-        extract_flags => '-of',
-        cleanup       => true,
-      } #->
+      windows::unzip { "$rubrik_temp_dir/RubrikBackupService.zip":
+        destination => $rubrik_temp_dir,
+      }
 
 #      package { 'rubrik-agent':
 #        ensure   => installed,
