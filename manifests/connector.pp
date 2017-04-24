@@ -8,8 +8,7 @@ class rubrik::connector ( ) inherits rubrik {
       } ->
       windows::unzip { "$rubrik_temp_dir/RubrikBackupService.zip":
         destination => "$rubrik_temp_dir",
-        creates     => "$rubrik_temp_dir/RubrikBackupService.msi",
-        creates     => "$rubrik_temp_dir/backup-agent.crt",
+        unless     => "$rubrik_temp_dir/RubrikBackupService.msi",
       }
 
 #      package { 'rubrik-agent':
