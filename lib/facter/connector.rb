@@ -4,7 +4,7 @@ Facter.add(:rubrik_connector) do
     case Facter.value(:kernel) 
     when 'windows' || 'Windows'
       begin
-        status = system( "powershell (Get-Service 'Rubrik Backup Service').status") 
+        status = system( "powershell (Get-Service 'Rubrik Backup Service').status -ErrorAction SilentlyContinue") 
         if status == true
           rubrik_connector="Installed"
         else 
