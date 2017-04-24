@@ -12,7 +12,6 @@ class rubrik::connector ( ) inherits rubrik {
       } ->
       package { 'rubrik-agent':
         ensure   => installed,
-        provider => 'msi',
         source   => "$rubrik_temp_dir\RubrikBackupService.msi",
       }
     }
