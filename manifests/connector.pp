@@ -6,6 +6,9 @@ class rubrik::connector ( ) inherits rubrik {
         destination_directory => $rubrik_temp_dir,
         insecure => true,
       } ->
+
+      include '::archive'
+
       archive { "$rubrik_temp_dir/RubrikBackupService.zip":
         extract       => true,
         extract_path  => $rubrik_temp_dir,
