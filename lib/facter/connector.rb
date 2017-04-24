@@ -4,7 +4,7 @@ Facter.add(:rubrik_connector) do
     when 'windows' || 'Windows'
       status = (system( "powershell (Get-Service 'Rubrik Backup Service' -ErrorAction SilentlyContinue).status") )
       if status == "Running"
-        'Installed'
+        return 'Installed'
       end
     end
   end
