@@ -8,10 +8,8 @@ def getFromApi(p)
   conn = Faraday.new(:url => 'https://' + sv)
   conn.ssl.verify = false
   conn.authorization :Bearer, t 
-  #conn.response :logger
   response = conn.get p
   if response.status != 200
-    # Raise error for failed login
      msg = JSON.parse(response.body)['message']
      raise "Rubrik - Error (#{msg})"
   else
