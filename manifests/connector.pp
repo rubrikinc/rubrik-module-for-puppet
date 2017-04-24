@@ -7,7 +7,7 @@ class rubrik::connector ( ) inherits rubrik {
         insecure => true,
       } ->
       windows::unzip { "$rubrik_temp_dir\RubrikBackupService.zip":
-        destination => "$rubrik_temp_dir",
+        destination => $rubrik_temp_dir,
         unless     => "$rubrik_temp_dir\RubrikBackupService.msi",
       }
 
