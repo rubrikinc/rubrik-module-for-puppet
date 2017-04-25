@@ -11,7 +11,7 @@ Facter.add(:rubrik_connector) do
       end
     when /(L|l)inux/ 
       'running linux'
-      conn_status = Facter::Util::Resolution::exec("/bin/rpm -q -a | grep telnet | wc -l")
+      conn_status = Facter::Util::Resolution::exec("/bin/rpm -q -a | grep rubrik-agent | wc -l")
       if conn_status then
         'true'
       else
