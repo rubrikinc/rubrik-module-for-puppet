@@ -5,9 +5,9 @@ Facter.add(:rubrik_connector) do
     when 'windows' || 'Windows'
        conn_status = Facter::Util::Resolution::exec('powershell (Get-Service "Rubrik Backup Service" -ErrorAction SilentlyContinue).status') 
        if conn_status == "Running" then
-         true
+         conn_status
        else
-         false
+         conn_status
       end
     end
   end
