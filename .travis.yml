@@ -3,7 +3,9 @@ rvm:
 #  - 2.4.1
   - 2.3.4
 #  - 2.2.7
-script: "rake lint"
+script:
+- rake lint
+- rake spec
 env:
 #  - PUPPET_VERSION=4.10
   - PUPPET_VERSION=4.9
