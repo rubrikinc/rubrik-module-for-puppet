@@ -3,8 +3,6 @@ class rubrik::sla_domain::set (
   ) inherits rubrik
 {
   if $::sladomain != $rubriksla{
-      loglevel => info,
-    }
     $script = 'rubrik.rb'
     $path = '/opt/puppetlabs/puppet/cache/lib/facter/ruby-bits/'
     $ruby = '/opt/puppetlabs/puppet/bin/ruby'
