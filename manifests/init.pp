@@ -13,7 +13,7 @@ class rubrik($rubriknode,$rubrikpass,$rubrikuser){
       }
     }
     default: {
-      fail("Module ${module_name} has no current value on ${::operatingsystem}")
+      Notify("Module ${module_name} has no current value on ${::operatingsystem}")
     }
   }
 }
