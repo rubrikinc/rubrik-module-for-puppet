@@ -12,7 +12,7 @@ Facter.add(:rubrik_connector) do
     when /(L|l)inux/ 
       'running linux'
       conn_status = Facter::Util::Resolution::exec("/bin/rpm -q -a | grep telnet | wc -l")
-      if conn_status == 1 then
+      if conn_status then
         'true'
       else
         'false'
