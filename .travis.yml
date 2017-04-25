@@ -8,10 +8,6 @@ env:
 #  - PUPPET_VERSION=4.10
   - PUPPET_VERSION=4.9
 #  - PUPPET_VERSION=4.8
-  - "GEM=puppet-lint"
-  - "GEM=rspec-puppet"
-  - "GEM=puppet"
-  - "GEM=facter"
 matrix:
   exclude:
 
