@@ -4,7 +4,7 @@
 class rubrik::connector ( ) inherits rubrik {
   case $::kernel {
     /(W|w)indows/: {
-      if $::rubrik_connector == false {
+      if str2bool($::rubrik_connector) == false {
         download_file { 'Rubrik Agent Download' :
           url                   => "https://${rubrik::rubriknode}/connector/RubrikBackupService.zip",
           destination_directory => $::rubrik_temp_dir,
@@ -21,7 +21,7 @@ class rubrik::connector ( ) inherits rubrik {
       }
     }
     /(L|l)inux/: {
-      if $::rubrik_connector == false {
+      if str2bool($::rubrik_connector) == false {
         include wget
         wget::fetch { "https://${rubrik::rubriknode}/connector/rubrik-agent.x86_64.rpm":
           destination        => '/tmp/',
