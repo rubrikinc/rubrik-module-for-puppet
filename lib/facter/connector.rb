@@ -9,7 +9,12 @@ Facter.add(:rubrik_connector) do
         'false'
       end
     when 'linux' || 'Linux'
-      Facter::Util::Resolution::exec('/bin/rpm -q -a | grep telnet | wc -l')
+      conn_status = Facter::Util::Resolution::exec('/bin/rpm -q -a | grep telnet | wc -l')
+      if conn_status == 1 then
+        'true'
+      else
+        'false'
+      end
     end 
   end
 end
