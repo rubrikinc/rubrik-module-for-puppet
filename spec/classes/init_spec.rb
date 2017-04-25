@@ -1,6 +1,6 @@
 require 'spec_helper'
 
 describe 'init' do
-  let(:title) { 'init.pp' }
-  let(:node) { 'se-pmilanes-pc01' }
+  # Check whether puppet can compile the catalog for the 'mymodule' class
+  it { should.compile }
 end
