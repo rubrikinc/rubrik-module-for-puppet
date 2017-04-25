@@ -21,9 +21,17 @@ Add the module to your Puppetfile
 mod 'rubrik',
   :git  =>  'https://github.com/rubrik-devops/rubrik-puppet'
 ```
+### Dependencies
+These modules are required :
+```ruby
+mod 'maestrodev-wget', '1.7.3'
+mod 'puppet-download_file',
+  :git  =>  'git@github.com:rubrik-devops/puppet-download_file.git'
+mod 'counsyl-windows', '1.0.4'
+```
 ### What rubrik affects
 
-This module currently enforces SLA Domain membership
+This module currently enforces SLA Domain membership and installation of connectors for linux and windows kernels. 
 
 ## Usage
 
@@ -33,18 +41,19 @@ This module currently enforces SLA Domain membership
 classes:
     - rubrik
     - rubrik::sla_domain::set
+    - rubrik::connector
 ```
 ### Hiera - Let's set a base sladomain
 
 ```ruby
-rubrik::sla_domain::set::sla_domain: '[your desired rubrik sla domain name]'
+rubrik::sla_domain::set:: '[your desired rubrik sla domain name]'
 rubrik::rubriknode: '[your rubrik node fqdn or ip]'
 rubrik::rubrikuser: '[your rubrik user name]'
 rubrik::rubrikpass: 'eyaml[your rubrik password]'
 ```
 
 ## Reference
-This module will allow facter to interact with the Agent configuration with regard to SLA Domains. It will also allow the Agent to self correct based on the configured SLA Domain in your hiera hierarchy.
+This module will allow facter to interact with the Agent configuration with regard to SLA Domains. It will also allow the Agent to self correct based on the configured SLA Domain in your hiera hierarchy. It will also allow installation of the connector.
 
 ## Tested On
 

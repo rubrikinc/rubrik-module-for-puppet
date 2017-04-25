@@ -1,6 +1,6 @@
 class rubrik($rubriknode,$rubrikpass,$rubrikuser){
   case $kernel {
-    linux: {
+    /(L|l)inux/: {
       file { '/root/.rubrik':
         ensure => directory,
       }
