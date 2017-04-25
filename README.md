@@ -46,7 +46,7 @@ classes:
 ### Hiera - Let's set a base sladomain
 
 ```ruby
-rubrik::sla_domain::set:: '[your desired rubrik sla domain name]'
+rubrik::sla_domain::set: '[your desired rubrik sla domain name]'
 rubrik::rubriknode: '[your rubrik node fqdn or ip]'
 rubrik::rubrikuser: '[your rubrik user name]'
 rubrik::rubrikpass: 'eyaml[your rubrik password]'
