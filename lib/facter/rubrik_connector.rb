@@ -12,7 +12,7 @@ Facter.add(:rubrik_connector) do
     when /(L|l)inux/ 
       conn_status = Facter::Util::Resolution::exec("/bin/rpm -q -a | grep rubrik-agent | wc -l")
       if conn_status then
-        conn_status 
+        'true' 
       else
         'false'
       end
