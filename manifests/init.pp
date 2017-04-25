@@ -1,4 +1,4 @@
-1123class rubrik($rubriknode,$rubrikpass,$rubrikuser){
+class rubrik($rubriknode,$rubrikpass,$rubrikuser){
   case $kernel {
     /(L|l)inux/: {
       file { '/root/.rubrik':
