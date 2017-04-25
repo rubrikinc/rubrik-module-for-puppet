@@ -1,5 +1,5 @@
 require 'facter'
-Facter.add(:sladomain) do
+Facter.add(:rubrik_sladomain) do
   hn = Facter.value(:hostname)
   setcode do
   ruby = '/opt/puppetlabs/puppet/bin/ruby'

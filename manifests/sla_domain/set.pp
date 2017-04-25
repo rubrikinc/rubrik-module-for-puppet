@@ -2,7 +2,7 @@ class rubrik::sla_domain::set (
   $rubriksla,
   ) inherits rubrik
 {
-  if $::sladomain != $rubriksla{
+  if $::rubrik_sladomain != $rubriksla{
     $script = 'rubrik.rb'
     $path = '/opt/puppetlabs/puppet/cache/lib/facter/ruby-bits/'
     $ruby = '/opt/puppetlabs/puppet/bin/ruby'
