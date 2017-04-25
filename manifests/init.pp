@@ -1,3 +1,5 @@
+# Main rubrik class, right now just puts creds on linux so that facter can grab SLA
+
 class rubrik($rubriknode,$rubrikpass,$rubrikuser){
   case $::kernel {
     /(L|l)inux/: {

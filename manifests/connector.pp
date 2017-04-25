@@ -1,3 +1,6 @@
+# Class installs connector on linux and windows kernels, just include it in the manifest/hiera 
+# where it suits your installation
+
 class rubrik::connector ( ) inherits rubrik {
   case $::kernel {
     /(W|w)indows/: {
