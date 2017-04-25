@@ -9,7 +9,7 @@ Facter.add(:rubrik_connector) do
          'false'
       end
     when 'linux' || 'Linux'
-      conn_status = Facter::Util::Resolution::exec("rpm -q - a | grep rubrik-agent | wc -l")
+      conn_status = Facter::Util::Resolution::exec("rpm -q -a | grep rubrik-agent | wc -l")
       if conn_status then
         'true'
       else
