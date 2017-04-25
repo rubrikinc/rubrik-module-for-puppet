@@ -18,7 +18,7 @@ class rubrik::connector ( ) inherits rubrik {
       }
     }
   
-    /^linux/i: {
+    /^(L|l)inux/: {
       include wget
       wget::fetch { "https://${rubrik::rubriknode}/connector/rubrik-agent.x86_64.rpm":
         destination => '/tmp/',
