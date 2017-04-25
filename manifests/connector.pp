@@ -1,6 +1,6 @@
 class rubrik::connector ( ) inherits rubrik {
   case $kernel {
-    'windows' || 'Windows': {
+    /(W|w)indows/: {
       if $rubrik_connector == 'false' {
         download_file { "Rubrik Agent Download" :
           url   => "https://${rubrik::rubriknode}/connector/RubrikBackupService.zip",
