@@ -1,3 +1,4 @@
 fixtures:
-    symlinks:
-        rubrik: "#{source_dir}"
+ forge: "https//forge.puppetlabs.com"
+ symlinks:
+   rubrik: "#{source_dir}"
