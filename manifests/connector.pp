@@ -1,24 +1,24 @@
 class rubrik::connector ( ) inherits rubrik {
-  case $kernel {
+  case $::kernel {
     /(W|w)indows/: {
-      if $rubrik_connector == 'false' {
-        download_file { "Rubrik Agent Download" :
+      if $::rubrik_connector == 'false' {
+        download_file { 'Rubrik Agent Download' :
           url   => "https://${rubrik::rubriknode}/connector/RubrikBackupService.zip",
-          destination_directory => $rubrik_temp_dir,
+          destination_directory => $::rubrik_temp_dir,
           insecure => true,
         }
-        -> windows::unzip { "$rubrik_temp_dir\RubrikBackupService.zip":
-          destination => $rubrik_temp_dir,
+        -> windows::unzip { "${rubrik_temp_dir}\RubrikBackupService.zip":
+          destination => $::rubrik_temp_dir,
           unless     => '$rubrik_temp_dir\RubrikBackupService.msi',
         }
         -> package { 'Rubrik Backup Service':
           ensure   => installed,
-          source   => "$rubrik_temp_dir\RubrikBackupService.msi",
+          source   => "${rubrik_temp_dir}\RubrikBackupService.msi",
         }
       }
     }
     /(L|l)inux/: {
-      if $rubrik_connector == 'false' {
+      if $::rubrik_connector == 'false' {
         include wget
         wget::fetch { "https://${rubrik::rubriknode}/connector/rubrik-agent.x86_64.rpm":
           destination => '/tmp/',
@@ -29,9 +29,12 @@ class rubrik::connector ( ) inherits rubrik {
         -> package { 'rubrik-agent':
           provider => 'rpm',
           ensure   => installed,
-          source   => "/tmp/rubrik-agent.x86_64.rpm"
+          source   => '/tmp/rubrik-agent.x86_64.rpm'
         }
       }
     }  
+    default: {
+      fail("Module ${module_name} has no current value on ${::operatingsystem}")
+    }
   }
 }
