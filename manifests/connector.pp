@@ -18,19 +18,21 @@ class rubrik::connector ( ) inherits rubrik {
       }
     }
   
-    /^(L|l)inux/: {
-      include wget
-      wget::fetch { "https://${rubrik::rubriknode}/connector/rubrik-agent.x86_64.rpm":
-        destination => '/tmp/',
-        timeout     => 0,
-        verbose     => true,
-        nocheckcertificate     => true
-      } -> 
+    /(L|l)inux/: {
+      if $rubrik_connector == 'false' { 
+        include wget
+        wget::fetch { "https://${rubrik::rubriknode}/connector/rubrik-agent.x86_64.rpm":
+          destination => '/tmp/',
+          timeout     => 0,
+          verbose     => true,
+          nocheckcertificate     => true
+        } -> 
     
-      package { 'rubrik-agent':
-        provider => 'rpm',
-        ensure   => installed,
-        source   => "/tmp/rubrik-agent.x86_64.rpm"
+        package { 'rubrik-agent':
+          provider => 'rpm',
+          ensure   => installed,
+          source   => "/tmp/rubrik-agent.x86_64.rpm"
+        }
       }
     }  
   }
