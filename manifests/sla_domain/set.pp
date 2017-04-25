@@ -1,3 +1,5 @@
+# Class to update SLA domain on Rubrik Cluster for Agent
+
 class rubrik::sla_domain::set (
   $rubriksla,
   ) inherits rubrik

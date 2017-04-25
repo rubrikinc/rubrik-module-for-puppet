@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+#  - 2.4.1
+  - 2.3.4
+#  - 2.2.7
+script: "rake lint"
+env:
+#  - PUPPET_VERSION=4.10
+  - PUPPET_VERSION=4.9
+#  - PUPPET_VERSION=4.8
+matrix:
+  exclude:
+
+notifications:
+  email: false
