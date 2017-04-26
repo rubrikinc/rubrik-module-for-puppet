@@ -1,14 +1,16 @@
 {
-  "name": "peterm-rubrik",
-  "version": "0.1.0",
+  "name": "rubrikinc-rubrik",
+  "version": "3.1.0",
   "author": "peterm",
-  "summary": null,
+  "summary": "Module to manage client configuration and interaction with Rubrik Cluster (www.rubrik.com)",
   "license": "Apache-2.0",
-  "source": "",
-  "project_page": null,
-  "issues_url": null,
+  "source": "https://github.com/rubrik-devops/rubrik-puppet",
+  "project_page": "https://github.com/rubrik-devops/rubrik-puppet",
+  "issues_url": "https://github.com/rubrik-devops/rubrik-puppet/issues",
   "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+    {"name":"maestrodev-wget","version_requirement":">= 1.7.3"},
+    {"name":"puppet-download_file","version_requirement":">= 2.1.1"},
+    {"name":"counsyl-windows","version_requirement":">= 1.0.4"}
   ],
   "data_provider": null
 }
