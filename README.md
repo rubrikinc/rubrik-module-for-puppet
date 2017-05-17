@@ -28,6 +28,17 @@ mod 'maestrodev-wget', '1.7.3'
 mod 'puppet-download_file',
   :git  =>  'git@github.com:rubrik-devops/puppet-download_file.git'
 mod 'counsyl-windows', '1.0.4'
+mod 'puppet_gem'
+```
+You will also need to include faraday in your puppet ruby gems
+```   
+package { 'rubygems':
+  ensure => present,
+}
+package { 'faraday':
+  provider => 'puppet_gem',
+  require  => Package['rubygems'],
+}
 ```
 ### What rubrik affects
 
