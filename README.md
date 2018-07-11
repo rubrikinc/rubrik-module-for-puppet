@@ -68,9 +68,11 @@ This module will allow facter to interact with the Agent configuration with rega
 
 ## Tested On
 
-* Rubrik v3.1
+* Rubrik v4.1
 
 * Centos7
+
+* Windows 2008r2 +
 
 * Puppet 2016/05
 
