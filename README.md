@@ -1,4 +1,4 @@
-# rubrik
+# Rubrik Module for Puppet
 
 
 #### Table of Contents
@@ -13,8 +13,8 @@
 
 ## Description
 
-The Rubrik Puppet Module supplies an interface into the Rubrik (Brik)
-configuration as it pertains to puppet agents.
+The Rubrik Module for Rubrik supplies an interface into the Rubrik Cloud Data Management
+configuration as it pertains to Puppet agents.
 
 ## Setup
 Add the module to your Puppetfile
