@@ -10,12 +10,9 @@ Facter.add(:rubrik_connector) do
         'false'
       end
     when /(L|l)inux/ 
-      conn_status = Facter::Util::Resolution::exec("/bin/rpm -q -a | grep rubrik-agent | wc -l")
-      if conn_status == '1' then
-        'true' 
-      else
-        'false'
-      end
+      # Check to see if the rubrik-agent package is installed.
+      Facter::Core::Execution.execute("/bin/rpm --quiet -q rubrik-agent")
+      $?.success?
     end 
   end
 end
